@@ -76,7 +76,7 @@ public class UserLoginServiceImpl implements IUserLoginService{
         String subject="OTP from Boot Store";
         String message = "your OTP is "+OTP;
         String toEmail = email;
-        String fromEmail= "xyz@gmail.com";
+        String fromEmail= "ashwath.naidu@bridgelabz.com";
         sendEmail(subject, message,fromEmail,toEmail);
         return OTP;
     }
@@ -120,7 +120,7 @@ public class UserLoginServiceImpl implements IUserLoginService{
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(fromEmail, "password");
+                return new PasswordAuthentication(fromEmail, "Chanti_0704");
             }
         });
         session.setDebug(true);
