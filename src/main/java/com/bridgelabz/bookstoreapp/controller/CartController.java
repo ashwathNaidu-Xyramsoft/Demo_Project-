@@ -29,9 +29,9 @@ public class CartController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/get/{cartId}")
-    public ResponseEntity<ResponseDTO> getAddressBookData(@PathVariable("cartId") Long cartId) {
-        Cart cartData = cartService.getBookStoreDataById(cartId);
+    @GetMapping("/get/{userId}")
+    public ResponseEntity<ResponseDTO> getAddressBookData(@PathVariable("userId") Long userId) {
+        List<Cart> cartData = cartService.getBookStoreDataByUserId(userId);
         ResponseDTO respDTO = new ResponseDTO("Get Call By Id Success", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }

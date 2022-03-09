@@ -13,7 +13,7 @@ public interface ICartService {
     Cart addToCart(Long bookId);
     Cart addDataToCart(CartDTO cartDTO);
     Cart addBooksToCartByCartID(Long cartId,Long bookId);
-    Cart getBookStoreDataById(Long cartId);
+    List<Cart>  getBookStoreDataByUserId(Long cartId);
     void removeCart(Long cartId);
     Cart updateCart(Long catId, Long quantity);
     List<Cart> getAllCartItemsUser(String Token); // option for now

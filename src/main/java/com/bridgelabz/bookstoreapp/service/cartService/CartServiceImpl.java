@@ -4,7 +4,6 @@ import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
 import com.bridgelabz.bookstoreapp.entity.User;
-import com.bridgelabz.bookstoreapp.exception.BookStoreException;
 import com.bridgelabz.bookstoreapp.repository.BookRepository;
 import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
@@ -14,7 +13,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -38,8 +36,8 @@ public class CartServiceImpl implements ICartService{
         return cartrepository.findAll();
     }
 
-    public Cart getBookStoreDataById(Long cartId) {
-        return cartrepository.findById(cartId).orElseThrow(() -> new BookStoreException("Cart Not Found!!"));
+    public List<Cart> getBookStoreDataByUserId(Long userId) {
+        return cartrepository.findCartsByUsersId(userId);
     }
 
     @Override // not using this method
@@ -53,7 +51,7 @@ public class CartServiceImpl implements ICartService{
         return cartrepository.save(cart);
     }
 
-    @Override // working but need to still do
+    @Override // working 80% but need to still do
     public Cart addDataToCart(CartDTO cartDTO) {
         Long bookId = cartDTO.getBookId();
         Long userId = cartDTO.getUserId();
@@ -80,14 +78,15 @@ public class CartServiceImpl implements ICartService{
     }
 
     @Override // working
-    public void removeCart(Long bookId) {
-        Cart cartData = this.getBookStoreDataById(bookId);
-        cartrepository.delete(cartData);
+    public void removeCart(Long cartId) {
+        Cart cart = cartrepository.deleteCartByCartId(cartId);
+        //Cart cartData = this.getBookStoreDataById(bookId);
+        cartrepository.delete(cart);
     }
 
     @Override // working
     public Cart updateCart(Long cartId, Long quantity) {
-        Cart cartData = this.getBookStoreDataById(cartId);
+        Cart cartData = cartrepository.getBookStoreDataByCartId(cartId);
         cartData.setQuantity(quantity);
         // modelMapper.map(cartData,cartData);
         return cartrepository.save(cartData);

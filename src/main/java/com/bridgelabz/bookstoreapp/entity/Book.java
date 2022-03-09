@@ -39,8 +39,15 @@ public class Book {
     @Column(nullable = false,name="Quantity")
     private Long quantity;
 
+    /* @JoinTable(name ="book_cart_table",joinColumns = {@JoinColumn(name="cart_id",referencedColumnName = "bookId")},
+            inverseJoinColumns = {@JoinColumn(name ="book_id",referencedColumnName = "cartId")})*/
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-    @JoinColumn(name ="cart_id")
+    @JoinTable(name = "My_BOOK_CART_TABLE",
+            joinColumns = {@JoinColumn(name = "BOOK_FK", insertable = false,
+                    updatable = false, referencedColumnName = "bookId")},
+            inverseJoinColumns = {@JoinColumn(name = "CART_FK", insertable = false,
+                    updatable = false, referencedColumnName = "cartId")}
+    )   // many to many
     private Cart cart;
 
     @ManyToMany(mappedBy="book")
