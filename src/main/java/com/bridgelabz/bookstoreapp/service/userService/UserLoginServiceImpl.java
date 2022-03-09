@@ -1,7 +1,11 @@
 package com.bridgelabz.bookstoreapp.service.userService;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.Claim;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.Verification;
 import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.entity.UserLogin;
 import com.bridgelabz.bookstoreapp.exception.BookStoreException;
@@ -23,6 +27,8 @@ import java.util.Random;
 @Slf4j
 public class UserLoginServiceImpl implements IUserLoginService{
 
+    public static String JWT_TOKEN ;
+    public static Object PRINCIPLE ;
     @Autowired
     UserRepository userRepository;
 
@@ -36,21 +42,18 @@ public class UserLoginServiceImpl implements IUserLoginService{
         String userLoginRole = userLogin.getRole();
         // Authenticate TOKEN
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email,password);
-//        Authentication authenticate = authenticationManager.authenticate(authenticationToken);// TO be Done
         log.info("email : {}",email);
         log.info("password : {}",password);
         log.info("AuthenticationToken : {}",authenticationToken);
-//        log.info("authenticate status or checking : {} ", authenticate); // TO be Done
         User encodePasswordByEmail = userRepository.getEncodePasswordByEmail(email);
-//        log.info("encodePassword stored in MySql Database : {}",encodePasswordByEmail); // correct uncomment to look into stored encoded password in Database
-//        log.info("Attempted password is : {}",password); // correct uncomment to look into Attempted password
         boolean matches = passwordEncoder.matches(password,encodePasswordByEmail.getPassword());
         if (matches==true){
             log.info("Authentication status for email ID : {}: Verified ",email);
-            Object principal = authenticationToken.getPrincipal(); // subject in token
-            log.info("principal --> {}",principal);
-            String jwtToken = createJWTToken(principal);// JWT TOKEN
+            PRINCIPLE = authenticationToken.getPrincipal(); // subject in token
+            log.info("principal --> {}",PRINCIPLE);
+            String jwtToken = createJWTToken(PRINCIPLE);// JWT TOKEN
             log.info("JWT Token is : {}",jwtToken);
+            JWT_TOKEN = jwtToken;
             return  jwtToken;// JWT TOKEN
         }
         log.info("Authentication status for email ID : {}: Not Verified ",email);
@@ -58,14 +61,34 @@ public class UserLoginServiceImpl implements IUserLoginService{
         throw new BookStoreException("Password is mismatch, Enter the valid password");
     }
 
-    String createJWTToken( Object principal){
+    String createJWTToken(Object principal){
         Algorithm algorithm = Algorithm.HMAC256("secret_token".getBytes());
-        String generated_token = JWT.create()
-                .withIssuedAt(new Date(System.currentTimeMillis()))
-                .withIssuer("http://localhost:8080/address-book/Login")
-                .withSubject(principal.toString())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000)).sign(algorithm);
+        String generated_token = JWT.create().withIssuedAt(new Date(System.currentTimeMillis()))
+                                .withIssuer("http://localhost:8080/address-book/Login")
+                                .withSubject(principal.toString())
+                                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000)).sign(algorithm);
         return generated_token;
+    }
+
+    // Decoding the token
+    public static String findSubByDecodeToken(String jwtToken){
+        // to be corrected
+        String SubByDecodeToken = JWT.require(Algorithm.HMAC256("secret_token".getBytes()))
+                                .build()
+                                .verify(jwtToken)
+                                .getSubject();
+        return SubByDecodeToken;
+    }
+
+
+    public static String verifyToken(String token){
+        String JWT_TOKEN = UserLoginServiceImpl.JWT_TOKEN;
+        String actualSubject = UserLoginServiceImpl.findSubByDecodeToken(JWT_TOKEN);
+        String receivedSubject = UserLoginServiceImpl.findSubByDecodeToken(token);
+        if(actualSubject.equals(receivedSubject)){
+            return actualSubject;
+        }
+        throw new BookStoreException("Enter the valid token !!");
     }
 
     static Random random = new Random();

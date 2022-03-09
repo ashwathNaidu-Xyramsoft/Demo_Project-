@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface IUserService {
 
-    List<User> getAllUsers();
-    User getUserById(Long userId);
+    List<User> getAllUsers(String token);
+    User getUserById(String token, Long userId);
     User addUser(UserDTO userDTO);
-    User updateUser(Long userId, UserDTO userDTO);
-    String deleteUser(Long userId);
+    User updateUser(String token, Long userId, UserDTO userDTO);
+    String deleteUser(String token, Long userId);
 }

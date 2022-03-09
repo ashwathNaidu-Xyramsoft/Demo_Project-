@@ -1,6 +1,7 @@
 package com.bridgelabz.bookstoreapp.controller;
 
 import com.bridgelabz.bookstoreapp.dto.BookDTO;
+import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/bookstorecart")
 public class CartController {
 
@@ -33,26 +35,60 @@ public class CartController {
         ResponseDTO respDTO = new ResponseDTO("Get Call By Id Success", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
-
+/*
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO> createCartData(@Valid @RequestBody BookDTO bookDTO) {
-        Book bookData = cartService.addToCart(bookDTO);
+    public ResponseEntity<ResponseDTO> createCartData(@Valid @RequestBody Book book) {
+        Book bookData = cartService.addToCart(book.getBookId());
         ResponseDTO respDTO = new ResponseDTO(" book data created", bookData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+    */
+/*
 
-    @PutMapping("/update/{personId}")
-    public ResponseEntity<ResponseDTO> updateBookStoreData(@PathVariable("personId") Long cartId,
-                                                           @Valid @RequestBody Long quatity) {
+    @PostMapping("/create/{bookId}")
+    public ResponseEntity<ResponseDTO> createCartData(@PathVariable Long bookId) {
+        Cart cart = cartService.addToCart(bookId);
+        ResponseDTO respDTO = new ResponseDTO(" Cart data created", cart);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+*/
+
+    @PostMapping("/create")
+    public ResponseEntity<ResponseDTO> createCartData(@RequestBody CartDTO cartDTO) {
+        Cart cart = cartService.addDataToCart(cartDTO);
+        ResponseDTO respDTO = new ResponseDTO(" Cart data created", cart);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+// addBooksToCartByCartID
+    @PutMapping("/update/{cartId}")
+    public ResponseEntity<ResponseDTO> updateBookStoreData(@PathVariable("cartId") Long cartId,@RequestParam Long quatity) {
         Cart cartData = cartService.updateCart(cartId, quatity);
-        ResponseDTO respDTO = new ResponseDTO("updated adressBook data", quatity);
+        ResponseDTO respDTO = new ResponseDTO("updated adressBook data", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+
+ // need to work
+
+    @PutMapping("/update/addBooksToCartByCartID/{cartId}")
+    public ResponseEntity<ResponseDTO> addBooksToCartByCartID(@PathVariable("cartId") Long cartId,@RequestParam Long bookId) {
+        Cart cartData = cartService.addBooksToCartByCartID(cartId, bookId);
+        ResponseDTO respDTO = new ResponseDTO("Book updated successfully in cart : ", cartData);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+// delete
     @DeleteMapping("/delete/{cartId}")
     public ResponseEntity<ResponseDTO> deleteBookStoreData(@PathVariable("cartId") Long cartId) {
         cartService.removeCart(cartId);
         ResponseDTO respDTO = new ResponseDTO("deleted sucessful ", "Deleted Id" + cartId);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    // Get cart List for user
+    @GetMapping(value = {"/get-All-Cart-Items-User"})
+    public ResponseEntity<ResponseDTO> getAllCartItemsUser(@RequestParam String token) {
+        List<Cart> allCartItems = cartService.getAllCartItemsUser(token);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 }

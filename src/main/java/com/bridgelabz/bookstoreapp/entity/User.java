@@ -31,7 +31,7 @@ public class User {
     @Column(name="Role",nullable=false)
     private String role;
 
-    @OneToOne(mappedBy="userList")
+    @OneToOne(mappedBy="users")
     private Cart cart;
 
     @OneToMany(mappedBy="user")

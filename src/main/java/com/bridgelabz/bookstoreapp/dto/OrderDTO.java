@@ -21,5 +21,5 @@ public class OrderDTO {
     private String Address;
 
     @NotNull
-    private boolean cancel;
+    private boolean cancel = false;
 }

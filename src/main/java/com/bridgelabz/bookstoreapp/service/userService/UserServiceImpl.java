@@ -26,12 +26,14 @@ public class UserServiceImpl implements IUserService {
     PasswordEncoder passwordEncoder;
 
     @Override
-    public List<User> getAllUsers() {
+    public List<User> getAllUsers(String token) {
+        UserLoginServiceImpl.verifyToken(token);
         return userRepository.findAll();
     }
 
     @Override
-    public User getUserById(Long userId) {
+    public User getUserById(String token, Long userId) {
+        UserLoginServiceImpl.verifyToken(token);
         return userRepository.findById(userId).stream().filter(userData -> userData.getId()==userId).findFirst().orElseThrow(()->new BookStoreException("User not found, enter the valid User ID"));
     }
 
@@ -45,14 +47,17 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User updateUser(Long userId, UserDTO userDTO) {
+    public User updateUser(String token, Long userId, UserDTO userDTO) {
+        UserLoginServiceImpl.verifyToken(token);
         return null;
     }
 
     @Override
-    public String deleteUser(Long userId) {
+    public String deleteUser(String token, Long userId) {
+        UserLoginServiceImpl.verifyToken(token);
         userRepository.deleteById(userId);
         log.info("User data successfully deleted by ID -> ",userId);
         return "User data successfully deleted by ID -> " + userId;
     }
+
 }

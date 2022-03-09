@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("order")
 public class OrderController {
 
@@ -22,13 +23,6 @@ public class OrderController {
     public ResponseEntity<ResponseDTO> getAllOrders(){
         List<Order> allOrders = orderServiceImpl.getAllOrders();
         ResponseDTO responseDTO = new ResponseDTO("Get Call Success", allOrders);
-        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
-    }
-
-    @GetMapping( "/get-all-order-by-orderDTO")
-    public ResponseEntity<ResponseDTO> getUserDataById(@RequestBody OrderDTO orderDTO){
-        List<Order> orderList = orderServiceImpl.getAllOrders(orderDTO);
-        ResponseDTO responseDTO = new ResponseDTO("Get Call Successful at ORDER DTO: " , orderList);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 

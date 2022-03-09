@@ -1,6 +1,5 @@
 package com.bridgelabz.bookstoreapp.service.orderService;
 
-import com.bridgelabz.bookstoreapp.dto.OrderDTO;
 import com.bridgelabz.bookstoreapp.entity.Order;
 import com.bridgelabz.bookstoreapp.repository.OrderRepository;
 import org.modelmapper.ModelMapper;
@@ -20,17 +19,15 @@ public class OrderServiceImpl implements IOrderService{
 
     @Override
     public Order placeOrder(String token) {
+       // String emailId = UserLoginServiceImpl.verifyToken(token);
+
         return null;
     }
 
     @Override
-    public Boolean cancelOrder(String token, Long orderId) {
-        return null;
-    }
-
-    @Override
-    public List<Order> getAllOrders(OrderDTO orderDTO) {
-        return null;
+    public String cancelOrder(String token, Long orderId) {
+        orderRepository.deleteById(orderId);
+        return "Deleted ";
     }
 
     @Override

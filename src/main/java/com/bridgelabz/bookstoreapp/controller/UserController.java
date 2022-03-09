@@ -13,21 +13,22 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class UserController {
 
     @Autowired
     UserServiceImpl userServiceImpl;
 
     @GetMapping(value = {"","/","/get"})
-    public ResponseEntity<ResponseDTO> getAllUsers(){
-        List<User> allUsers = userServiceImpl.getAllUsers();
+    public ResponseEntity<ResponseDTO> getAllUsers(@RequestParam String token){
+        List<User> allUsers = userServiceImpl.getAllUsers(token);
         ResponseDTO responseDTO = new ResponseDTO("Get Call Success", allUsers);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
     @GetMapping( "/getBYId/{userId}")
-    public ResponseEntity<ResponseDTO> getUserDataById(@PathVariable long userId){
-        User userById = userServiceImpl.getUserById(userId);
+    public ResponseEntity<ResponseDTO> getUserDataById(@RequestParam String token,@PathVariable long userId){
+        User userById = userServiceImpl.getUserById(token,userId);
         ResponseDTO responseDTO = new ResponseDTO("Get Call Successful at ID: " + userId, userById);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
@@ -40,15 +41,15 @@ public class UserController {
     }
 
     @PutMapping("/update/{userId}")
-    public ResponseEntity<ResponseDTO> updateUserById( @PathVariable long userId,@Valid @RequestBody UserDTO userDTO){
-        User user = userServiceImpl.updateUser(userId, userDTO);
+    public ResponseEntity<ResponseDTO> updateUserById( @RequestParam String token,@PathVariable long userId,@Valid @RequestBody UserDTO userDTO){
+        User user = userServiceImpl.updateUser(token,userId, userDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated Person with id  " + userId, user);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{userId}")
-    public ResponseEntity<ResponseDTO> deleteUserById(@PathVariable long userId){
-        userServiceImpl.deleteUser(userId);
+    public ResponseEntity<ResponseDTO> deleteUserById(@RequestParam String token,@PathVariable long userId){
+        userServiceImpl.deleteUser(token,userId);
         ResponseDTO responseDTO = new ResponseDTO("Deleted User with id  " + userId,"");
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }

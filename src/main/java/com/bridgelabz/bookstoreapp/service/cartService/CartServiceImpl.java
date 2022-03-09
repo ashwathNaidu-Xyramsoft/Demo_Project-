@@ -1,16 +1,20 @@
 package com.bridgelabz.bookstoreapp.service.cartService;
 
-import com.bridgelabz.bookstoreapp.dto.BookDTO;
+import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
+import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.exception.BookStoreException;
 import com.bridgelabz.bookstoreapp.repository.BookRepository;
 import com.bridgelabz.bookstoreapp.repository.CartRepository;
+import com.bridgelabz.bookstoreapp.repository.UserRepository;
+import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,6 +28,9 @@ public class CartServiceImpl implements ICartService{
     private BookRepository bookRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     @Override
@@ -31,34 +38,68 @@ public class CartServiceImpl implements ICartService{
         return cartrepository.findAll();
     }
 
-
     public Cart getBookStoreDataById(Long cartId) {
         return cartrepository.findById(cartId).orElseThrow(() -> new BookStoreException("Cart Not Found!!"));
     }
 
-    @Override
-    public Book addToCart(BookDTO bookDTO) {
-        // Book bookData = new Book(bookDTO); // using model mapper
-        Book bookData = modelMapper.map(bookDTO, Book.class);
-        log.debug("Book Data: "+bookData.toString());
-        return bookRepository.save(bookData);
+    @Override // not using this method
+    public Cart addToCart(Long bookId) {
+        Book book = bookRepository.getBookByBookId(bookId);
+        System.out.println(book);
+        Cart cart = new Cart();
+       /* cart.setBooks(book);*/
+        cart.setQuantity(4L);
+        cart.setUsers(null);
+        return cartrepository.save(cart);
     }
 
-    @Override
+    @Override // working but need to still do
+    public Cart addDataToCart(CartDTO cartDTO) {
+        Long bookId = cartDTO.getBookId();
+        Long userId = cartDTO.getUserId();
+        Long quantity = cartDTO.getQuantity(); // quantity
+        // getting book by book ID
+        Book book = bookRepository.getBookByBookId(bookId);
+        // getting user by user ID
+        User userById = userRepository.getUserById(userId);
+
+        Cart cart = new Cart();
+        cart.setUsers(userById);
+        cart.setQuantity(quantity);
+        cart.addBookToCart(book);
+        /*cart.setBooks(book);*/
+        return cartrepository.save(cart);
+    }
+
+    @Override // need to work on BOOK // now it is effecting in DB but need to work
+    public Cart addBooksToCartByCartID(Long cartId, Long bookId) {
+        Cart cart = cartrepository.findById(cartId).get();
+        Book bookByBookId = bookRepository.findByBookId(bookId);
+        cart.addBookToCart(bookByBookId);
+        return cartrepository.save(cart);
+    }
+
+    @Override // working
     public void removeCart(Long bookId) {
         Cart cartData = this.getBookStoreDataById(bookId);
         cartrepository.delete(cartData);
     }
 
-    @Override
+    @Override // working
     public Cart updateCart(Long cartId, Long quantity) {
         Cart cartData = this.getBookStoreDataById(cartId);
-        modelMapper.map(quantity,cartData);
+        cartData.setQuantity(quantity);
+        // modelMapper.map(cartData,cartData);
         return cartrepository.save(cartData);
     }
 
     @Override
-    public Cart getAllCartItemsUser(String token) {
-        return null;
+    public List<Cart> getAllCartItemsUser(String token) {
+        String emailID = UserLoginServiceImpl.verifyToken(token);
+        User userByEmail = userRepository.getEmailIdByEmail(emailID);
+        System.out.println("Its crossing this line");
+        List<Cart> cart = cartrepository.findAllByUsersId(userByEmail.getId());
+        System.out.println(cart);
+        return cart;
     }
 }

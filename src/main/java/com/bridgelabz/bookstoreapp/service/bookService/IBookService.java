@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface IBookService {
 
-    List<Book> getAllBook();
+    List<Book> getAllBook(String token);
     Book getBookByID(Long bookId);
-    Book addBook(BookDTO bookDTO);
-    Book updateBook(Long bookID, BookDTO bookDTO);
-    void deleteBook(Long bookId);
+    Book addBook(String token, BookDTO bookDTO);
+    Book updateBook(String token, Long bookID, BookDTO bookDTO);
+    void deleteBook(String token, Long bookId);
 
-    Book changeBookQuantity(Long bookId, Long price);
-    Book changeBookPrice(Long bookId, Long price);
+    Book changeBookQuantity(String token,Long bookId, Long quantity);
+    Book changeBookPrice(String token, Long bookId, Long price);
 
 }
