@@ -16,4 +16,5 @@ public interface IBookService {
     Book changeBookQuantity(String token,Long bookId, Long quantity);
     Book changeBookPrice(String token, Long bookId, Long price);
 
+    List<Book> getAllBookNew();
 }

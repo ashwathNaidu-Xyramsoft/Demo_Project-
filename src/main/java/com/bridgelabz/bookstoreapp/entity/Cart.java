@@ -30,6 +30,7 @@ public class Cart {
             inverseJoinColumns = {@JoinColumn(name = "BOOK_FK", referencedColumnName = "bookId")}
     )*/
     @ManyToMany
+    @JoinColumn
     private List<Book> books;
 
     private Long Quantity;

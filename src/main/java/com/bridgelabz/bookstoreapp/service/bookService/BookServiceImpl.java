@@ -22,7 +22,7 @@ public class BookServiceImpl implements IBookService{
     @Autowired
     private ModelMapper modelMapper;
 
-    @Override
+    @Override // i need to use
     public List<Book> getAllBook(String token) {
         UserLoginServiceImpl.verifyToken(token);
         return bookRepository.findAll();
@@ -76,5 +76,10 @@ public class BookServiceImpl implements IBookService{
             return bookRepository.save(book);
         }
         throw new BookStoreException("Book not found !!!! and enter the valid book ID ");
+    }
+
+    @Override
+    public List<Book> getAllBookNew() {
+        return bookRepository.findAll();
     }
 }

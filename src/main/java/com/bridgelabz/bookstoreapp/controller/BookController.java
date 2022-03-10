@@ -21,8 +21,8 @@ public class BookController {
     private IBookService bookService;
 
     @GetMapping(value = {"", "/","/get"})
-    public ResponseEntity<ResponseDTO> getAllBooks(@RequestParam String token){
-        List<Book> books = bookService.getAllBook(token);
+    public ResponseEntity<ResponseDTO> getAllBooks(){
+        List<Book> books = bookService.getAllBookNew();
         ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books Successfully", books);
         return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
     }
