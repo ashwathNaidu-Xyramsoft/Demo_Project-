@@ -1,5 +1,6 @@
 package com.bridgelabz.bookstoreapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -31,9 +32,11 @@ public class User {
     @Column(name="Role",nullable=false)
     private String role;
 
-    @OneToOne(mappedBy="users")
-    private Cart cart;
+    @JsonIgnore
+    @OneToMany(mappedBy="users")
+    private List<Cart> cart;
 
+    @JsonIgnore
     @OneToMany(mappedBy="user")
     private List<Order> orderList;
 }
