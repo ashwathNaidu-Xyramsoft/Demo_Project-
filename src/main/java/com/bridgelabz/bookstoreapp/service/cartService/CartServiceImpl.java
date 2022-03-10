@@ -36,6 +36,7 @@ public class CartServiceImpl implements ICartService{
         return cartrepository.findAll();
     }
 
+    @Override
     public List<Cart> getBookStoreDataByUserId(Long userId) {
         return cartrepository.findCartsByUsersId(userId);
     }
@@ -100,5 +101,11 @@ public class CartServiceImpl implements ICartService{
         List<Cart> cart = cartrepository.findAllByUsersId(userByEmail.getId());
         System.out.println(cart);
         return cart;
+    }
+
+    @Override
+    public List<Cart> findCartsByUsers_Id(Long userId) {
+        List<Cart> cartsByUsers_id = cartrepository.findCartsByUsers_Id(userId);
+        return cartsByUsers_id;
     }
 }

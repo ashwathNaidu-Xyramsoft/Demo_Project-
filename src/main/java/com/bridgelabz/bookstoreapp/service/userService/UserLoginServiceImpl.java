@@ -1,11 +1,7 @@
 package com.bridgelabz.bookstoreapp.service.userService;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.interfaces.Claim;
-import com.auth0.jwt.interfaces.DecodedJWT;
-import com.auth0.jwt.interfaces.Verification;
 import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.entity.UserLogin;
 import com.bridgelabz.bookstoreapp.exception.BookStoreException;

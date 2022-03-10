@@ -91,4 +91,12 @@ public class CartController {
         ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    // Get cart List for user
+    @GetMapping(value = {"/get-All-Carts-By-User-Id"})
+    public ResponseEntity<ResponseDTO> findCartsByUsers_Id(@RequestParam Long userId) {
+        List<Cart> allCartItems = cartService.findCartsByUsers_Id(userId);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
 }
