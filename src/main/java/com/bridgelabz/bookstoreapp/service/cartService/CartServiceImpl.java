@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -85,10 +86,9 @@ public class CartServiceImpl implements ICartService{
     }
 
     @Override // working
+
     public void removeCart(Long cartId) {
-        Cart cart = cartrepository.deleteCartByCartId(cartId);
-        //Cart cartData = this.getBookStoreDataById(bookId);
-        cartrepository.delete(cart);
+        cartrepository.deleteById(cartId);
     }
 
     @Override // working
@@ -113,5 +113,10 @@ public class CartServiceImpl implements ICartService{
     public List<Cart> findCartsByUsers_Id(Long userId) {
         List<Cart> cartsByUsers_id = cartrepository.findCartsByUsers_Id(userId);
         return cartsByUsers_id;
+    }
+
+    @Override
+    public List<Cart> getBookStoreDataByUsers_Id(Long users_id) {
+        return cartrepository.getBookStoreDataByUsers_Id(users_id);
     }
 }

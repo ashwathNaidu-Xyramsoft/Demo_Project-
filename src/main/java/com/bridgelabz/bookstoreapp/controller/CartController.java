@@ -1,6 +1,5 @@
 package com.bridgelabz.bookstoreapp.controller;
 
-import com.bridgelabz.bookstoreapp.dto.BookDTO;
 import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
@@ -11,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,10 +21,19 @@ public class CartController {
     @Autowired
     private CartServiceImpl cartService;
 
+
     @GetMapping(value = {"", "/", "/get"})
     public ResponseEntity<ResponseDTO> getAllCartItems() {
         List<Cart> allCartItems = cartService.getAllCartItems();
-        ResponseDTO respDTO = new ResponseDTO("Get Call Successfull", allCartItems);
+        ArrayList<Book> arrayList = new ArrayList<>();
+        for (int i = 0; i < allCartItems.size(); i++) {
+            List<Book> bookList = allCartItems.get(i).getBooks();
+            for (int j = 0; j < bookList.size(); j++) {
+                Book book = bookList.get(j);
+                arrayList.add(book);
+            }
+        }
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfull", arrayList);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
@@ -96,6 +104,14 @@ public class CartController {
     @GetMapping(value = {"/get-All-Carts-By-User-Id"})
     public ResponseEntity<ResponseDTO> findCartsByUsers_Id(@RequestParam Long userId) {
         List<Cart> allCartItems = cartService.findCartsByUsers_Id(userId);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    // get Book Store Data By User Id
+    @GetMapping(value = {"/getBookStoreDataByUserId"})
+    public ResponseEntity<ResponseDTO> getBookStoreDataByUserId(@RequestParam Long userId) {
+        List<Cart> allCartItems = cartService.getBookStoreDataByUserId(userId);
         ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }

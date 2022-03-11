@@ -20,6 +20,7 @@ public interface ICartService {
 
     List<Cart> findCartsByUsers_Id(Long userId);
 
+    List<Cart> getBookStoreDataByUsers_Id(Long users_id);
 
 
 

@@ -19,20 +19,20 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
 
-    //@JsonIgnore
+    @JsonIgnore
     @ManyToOne
     private User users;
 
-    @JsonIgnore
+    // @JsonIgnore
     /*@OneToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinTable(name = "My_BOOK_CART_TABLE",
             joinColumns = {@JoinColumn(name = "CART_FK", referencedColumnName = "cartId")},
             inverseJoinColumns = {@JoinColumn(name = "BOOK_FK", referencedColumnName = "bookId")}
     )*/
-    @ManyToMany
+    @ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn
     private List<Book> books;
-
+    
     private Long Quantity;
 
     // add books into list

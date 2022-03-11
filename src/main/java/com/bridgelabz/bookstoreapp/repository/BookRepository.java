@@ -3,6 +3,7 @@ package com.bridgelabz.bookstoreapp.repository;
 
 import com.bridgelabz.bookstoreapp.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.validation.constraints.Pattern;
 import java.util.List;

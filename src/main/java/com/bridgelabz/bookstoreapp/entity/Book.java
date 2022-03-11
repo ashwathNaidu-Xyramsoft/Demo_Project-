@@ -1,8 +1,10 @@
 package com.bridgelabz.bookstoreapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -12,6 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Book {
 
     @Id
@@ -48,7 +51,8 @@ public class Book {
             inverseJoinColumns = {@JoinColumn(name = "CART_FK", insertable = false,
                     updatable = false, referencedColumnName = "cartId")}
     )   // many to many*/
-    @ManyToMany(mappedBy ="books")
+    @JsonIgnore
+    @ManyToMany(mappedBy ="books",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     private List<Cart> cart;
 
     @ManyToMany(mappedBy="book")
