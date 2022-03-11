@@ -62,7 +62,8 @@ public class UserLoginServiceImpl implements IUserLoginService{
         String generated_token = JWT.create().withIssuedAt(new Date(System.currentTimeMillis()))
                                 .withIssuer("http://localhost:8080/address-book/Login")
                                 .withSubject(principal.toString())
-                                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000)).sign(algorithm);
+                                .sign(algorithm);
+        // .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
         return generated_token;
     }
 

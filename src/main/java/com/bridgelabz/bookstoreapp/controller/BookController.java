@@ -73,5 +73,20 @@ public class BookController {
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
+// SORTING
+    @GetMapping(value = {"", "/","/getBooksByOrderByPriceAsc"})
+    public ResponseEntity<ResponseDTO> getBooksByOrderByPriceAsc(){
+        List<Book> books = bookService.getBooksByOrderByPriceAsc();
+        ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books ASC ORDER Successfully", books);
+        return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
+    }
+
+    // SORTING
+    @GetMapping(value = {"", "/","/getBooksByOrderByPriceDesc"})
+    public ResponseEntity<ResponseDTO> getBooksByOrderByPriceDesc(){
+        List<Book> books = bookService.getBooksByOrderByPriceDesc();
+        ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books DESC ORDER Successfully", books);
+        return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
+    }
 
 }

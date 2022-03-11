@@ -17,4 +17,7 @@ public interface IBookService {
     Book changeBookPrice(String token, Long bookId, Long price);
 
     List<Book> getAllBookNew();
+
+    List<Book> getBooksByOrderByPriceAsc();
+    List<Book> getBooksByOrderByPriceDesc();
 }

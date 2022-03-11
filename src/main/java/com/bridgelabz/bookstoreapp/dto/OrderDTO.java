@@ -17,7 +17,7 @@ public class OrderDTO {
     @NotNull
     private Long Quantity;
 
-    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid")
+    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Address is Invalid")
     private String Address;
 
     @NotNull

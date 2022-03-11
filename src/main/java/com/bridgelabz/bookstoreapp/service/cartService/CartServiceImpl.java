@@ -4,6 +4,7 @@ import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
 import com.bridgelabz.bookstoreapp.entity.User;
+import com.bridgelabz.bookstoreapp.exception.BookStoreException;
 import com.bridgelabz.bookstoreapp.repository.BookRepository;
 import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
@@ -61,13 +62,18 @@ public class CartServiceImpl implements ICartService{
         Book book = bookRepository.getBookByBookId(bookId);
         // getting user by user ID
         User userById = userRepository.getUserById(userId);
+        System.out.println(book.getQuantity()); // getQuantity
 
-        Cart cart = new Cart();
-        cart.setUsers(userById);
-        cart.setQuantity(quantity);
-        cart.addBookToCart(book);
+        if (quantity != 0 && book.getQuantity() >= quantity){
+            Cart cart = new Cart();
+            cart.setUsers(userById);
+            cart.setQuantity(quantity);
+            cart.addBookToCart(book);
+            return cartrepository.save(cart);
+        }
+        throw new BookStoreException("Book is out stock !!! -> ( Enter the valid quantity )");
         /*cart.setBooks(book);*/
-        return cartrepository.save(cart);
+
     }
 
     @Override // need to work on BOOK // now it is effecting in DB but need to work
