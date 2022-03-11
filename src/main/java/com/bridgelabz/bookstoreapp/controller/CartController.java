@@ -25,15 +25,8 @@ public class CartController {
     @GetMapping(value = {"", "/", "/get"})
     public ResponseEntity<ResponseDTO> getAllCartItems() {
         List<Cart> allCartItems = cartService.getAllCartItems();
-        ArrayList<Book> arrayList = new ArrayList<>();
-        for (int i = 0; i < allCartItems.size(); i++) {
-            List<Book> bookList = allCartItems.get(i).getBooks();
-            for (int j = 0; j < bookList.size(); j++) {
-                Book book = bookList.get(j);
-                arrayList.add(book);
-            }
-        }
-        ResponseDTO respDTO = new ResponseDTO("Get Call Successfull", arrayList);
+        List<Book> bookList = doArrayList(allCartItems);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfull", bookList);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
@@ -76,15 +69,15 @@ public class CartController {
     }
 
 
- // need to work
-
+    // need to work
     @PutMapping("/update/addBooksToCartByCartID/{cartId}")
     public ResponseEntity<ResponseDTO> addBooksToCartByCartID(@PathVariable("cartId") Long cartId,@RequestParam Long bookId) {
         Cart cartData = cartService.addBooksToCartByCartID(cartId, bookId);
         ResponseDTO respDTO = new ResponseDTO("Book updated successfully in cart : ", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
-// delete
+
+    // delete
     @DeleteMapping("/delete/{cartId}")
     public ResponseEntity<ResponseDTO> deleteBookStoreData(@PathVariable("cartId") Long cartId) {
         cartService.removeCart(cartId);
@@ -103,8 +96,9 @@ public class CartController {
     // Get cart List for user
     @GetMapping(value = {"/get-All-Carts-By-User-Id"})
     public ResponseEntity<ResponseDTO> findCartsByUsers_Id(@RequestParam Long userId) {
-        List<Cart> allCartItems = cartService.findCartsByUsers_Id(userId);
-        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
+        List<Cart> allCartItems = cartService.findCartsByUsers_Id(userId); // print if you want to see Cart toString
+        List<Book> bookList = doArrayList(allCartItems);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", bookList);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
@@ -114,5 +108,19 @@ public class CartController {
         List<Cart> allCartItems = cartService.getBookStoreDataByUserId(userId);
         ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    // doing list to array list to get particular Data format from DataBase
+    List<Book> doArrayList(List<Cart> arrayList){
+
+        ArrayList<Book> bookArrayList = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            List<Book> bookList = arrayList.get(i).getBooks();
+            for (int j = 0; j < bookList.size(); j++) {
+                Book book = bookList.get(j);
+                bookArrayList.add(book);
+            }
+        }
+        return bookArrayList;
     }
 }
