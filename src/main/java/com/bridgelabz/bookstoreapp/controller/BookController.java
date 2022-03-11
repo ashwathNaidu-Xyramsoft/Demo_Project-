@@ -2,6 +2,7 @@ package com.bridgelabz.bookstoreapp.controller;
 
 import com.bridgelabz.bookstoreapp.dto.BookDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
+import com.bridgelabz.bookstoreapp.entity.AllEntity;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.service.bookService.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,7 +75,7 @@ public class BookController {
     }
 
 // SORTING
-    @GetMapping(value = {"", "/","/getBooksByOrderByPriceAsc"})
+    @GetMapping(value = {"/getBooksByOrderByPriceAsc"})
     public ResponseEntity<ResponseDTO> getBooksByOrderByPriceAsc(){
         List<Book> books = bookService.getBooksByOrderByPriceAsc();
         ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books ASC ORDER Successfully", books);
@@ -82,10 +83,34 @@ public class BookController {
     }
 
     // SORTING
-    @GetMapping(value = {"", "/","/getBooksByOrderByPriceDesc"})
+    @GetMapping(value = {"/getBooksByOrderByPriceDesc"})
     public ResponseEntity<ResponseDTO> getBooksByOrderByPriceDesc(){
         List<Book> books = bookService.getBooksByOrderByPriceDesc();
         ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books DESC ORDER Successfully", books);
+        return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
+    }
+
+    // BOOKS SORTING
+    @GetMapping(value = {"/getBooksByOrderByBookIdAsc"})
+    public ResponseEntity<ResponseDTO> getBooksByOrderByBookIdAsc(){
+        List<Book> books = bookService.getBooksByOrderByBookIdAsc();
+        ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books ASC ORDER Successfully", books);
+        return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
+    }
+
+    // BOOKS SORTING
+    @GetMapping(value = {"/getBooksByOrderByBookIdDesc"})
+    public ResponseEntity<ResponseDTO> getBooksByOrderByBookIdDesc(){
+        List<Book> books = bookService.getBooksByOrderByBookIdDesc();
+        ResponseDTO booksResponseDTO = new ResponseDTO("Get All Books DESC ORDER Successfully", books);
+        return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
+    }
+
+    // BOOKS searchBooksByName SORTING
+    @PostMapping(value = {"/getBooksByAuthor"})
+    public ResponseEntity<ResponseDTO> getBooksByAuthor(@RequestBody BookDTO  bookDTO){
+        List<Book> booksByAuthor = bookService.getBooksByAuthor(bookDTO.getAuthor());
+        ResponseDTO booksResponseDTO = new ResponseDTO("Get all books by name successfully", booksByAuthor);
         return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
     }
 

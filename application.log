@@ -408,3 +408,291 @@ com.auth0.jwt.exceptions.TokenExpiredException: The Token has expired on Fri Mar
 2022-03-11 15:22:21.875  INFO 13432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-03-11 15:22:21.884  INFO 13432 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.312 seconds (JVM running for 4.699)
 2022-03-11 15:22:21.888  INFO 13432 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 15:22:45.158  INFO 13432 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 16:32:56.775  INFO 13432 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 16:32:56.775  INFO 13432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 16:32:56.788  INFO 13432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 16:33:02.245  INFO 17580 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 17580 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 16:33:02.245  INFO 17580 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 16:33:02.296  INFO 17580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 16:33:02.296  INFO 17580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 16:33:03.045  INFO 17580 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 16:33:03.184  INFO 17580 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 4 JPA repository interfaces.
+2022-03-11 16:33:03.555  INFO 17580 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$2cbb0040] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 16:33:03.595  INFO 17580 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 16:33:03.966  INFO 17580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 16:33:03.974  INFO 17580 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 16:33:03.974  INFO 17580 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 16:33:04.044  INFO 17580 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 16:33:04.054  INFO 17580 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1758 ms
+2022-03-11 16:33:04.563  INFO 17580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 16:33:04.844  INFO 17580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 16:33:05.589  INFO 17580 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 16:33:06.149  WARN 17580 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 16:33:06.610  INFO 17580 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 16:33:06.650  INFO 17580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 16:33:06.663  INFO 17580 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.78 seconds (JVM running for 5.199)
+2022-03-11 16:33:06.665  INFO 17580 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 16:33:12.044  INFO 17580 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 16:33:12.048  INFO 17580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 16:33:12.057  INFO 17580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 16:47:58.738  INFO 22368 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 22368 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 16:47:58.739  INFO 22368 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 16:47:58.809  INFO 22368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 16:47:58.809  INFO 22368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 16:48:00.073  INFO 22368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 16:48:00.278  INFO 22368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 4 JPA repository interfaces.
+2022-03-11 16:48:00.750  INFO 22368 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$40b8eabc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 16:48:00.813  INFO 22368 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 16:48:01.380  INFO 22368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 16:48:01.403  INFO 22368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 16:48:01.403  INFO 22368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 16:48:01.597  INFO 22368 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 16:48:01.599  INFO 22368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2786 ms
+2022-03-11 16:48:02.429  INFO 22368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 16:48:02.923  INFO 22368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 16:48:04.184  INFO 22368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 16:48:05.195  WARN 22368 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 16:48:05.973  INFO 22368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 16:48:06.028  INFO 22368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 16:48:06.048  INFO 22368 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 7.915 seconds (JVM running for 8.581)
+2022-03-11 16:48:06.060  INFO 22368 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 16:48:47.063  INFO 22368 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 17:02:45.174  WARN 22368 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'long'; nested exception is java.lang.NumberFormatException: For input string: "searchBooksByName"]
+2022-03-11 17:08:31.979  INFO 22368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:08:31.983  INFO 22368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 17:08:31.989  INFO 22368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 17:08:37.433  INFO 21192 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 21192 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 17:08:37.433  INFO 21192 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 17:08:37.476  INFO 21192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 17:08:37.476  INFO 21192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 17:08:38.235  INFO 21192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 17:08:38.364  INFO 21192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 4 JPA repository interfaces.
+2022-03-11 17:08:38.678  INFO 21192 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$15aa355] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 17:08:38.723  INFO 21192 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 17:08:39.084  INFO 21192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 17:08:39.092  INFO 21192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 17:08:39.092  INFO 21192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 17:08:39.169  INFO 21192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 17:08:39.170  INFO 21192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1694 ms
+2022-03-11 17:08:39.594  INFO 21192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 17:08:39.877  INFO 21192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 17:08:40.624  INFO 21192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:08:41.195  WARN 21192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 17:08:41.683  INFO 21192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 17:08:41.735  INFO 21192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 17:08:41.744  INFO 21192 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.661 seconds (JVM running for 5.063)
+2022-03-11 17:08:41.747  INFO 21192 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 17:10:27.349  INFO 21192 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:10:27.353  INFO 21192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 17:10:27.368  INFO 21192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 17:10:32.757  INFO 20272 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 20272 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 17:10:32.757  INFO 20272 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 17:10:32.802  INFO 20272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 17:10:32.802  INFO 20272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 17:10:33.493  INFO 20272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 17:10:33.633  INFO 20272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 4 JPA repository interfaces.
+2022-03-11 17:10:33.952  INFO 20272 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3a528a1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 17:10:33.992  INFO 20272 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 17:10:34.343  INFO 20272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 17:10:34.352  INFO 20272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 17:10:34.352  INFO 20272 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 17:10:34.432  INFO 20272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 17:10:34.433  INFO 20272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1631 ms
+2022-03-11 17:10:34.882  INFO 20272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 17:10:35.172  INFO 20272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 17:10:35.924  INFO 20272 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:10:36.547  WARN 20272 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 17:10:37.004  INFO 20272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 17:10:37.038  INFO 20272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 17:10:37.050  INFO 20272 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.642 seconds (JVM running for 5.037)
+2022-03-11 17:10:37.054  INFO 20272 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 17:11:29.223  INFO 20272 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 17:22:02.460  WARN 20272 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'author' for method parameter type String is not present]
+2022-03-11 17:22:47.113  INFO 20272 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:22:47.116  INFO 20272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 17:22:47.123  INFO 20272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 17:22:52.598  INFO 10812 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 10812 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 17:22:52.601  INFO 10812 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 17:22:52.662  INFO 10812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 17:22:52.663  INFO 10812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 17:22:53.441  INFO 10812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 17:22:53.591  INFO 10812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 4 JPA repository interfaces.
+2022-03-11 17:22:53.952  INFO 10812 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$dd3f6456] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 17:22:54.002  INFO 10812 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 17:22:54.435  INFO 10812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 17:22:54.448  INFO 10812 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 17:22:54.448  INFO 10812 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 17:22:54.546  INFO 10812 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 17:22:54.548  INFO 10812 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1884 ms
+2022-03-11 17:22:55.050  INFO 10812 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 17:22:55.338  INFO 10812 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 17:22:56.205  INFO 10812 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:22:56.846  WARN 10812 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 17:22:57.454  INFO 10812 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 17:22:57.489  INFO 10812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 17:22:57.504  INFO 10812 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 5.295 seconds (JVM running for 5.742)
+2022-03-11 17:22:57.511  INFO 10812 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 17:23:02.802  INFO 10812 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 17:40:41.932  WARN 10812 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:40:55.582  WARN 10812 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:42:48.954  WARN 10812 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:43:15.139  WARN 10812 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:43:54.464  WARN 10812 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:45:28.174  INFO 10812 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:45:28.174  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 17:45:28.189  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 17:45:35.180  INFO 15620 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 15620 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 17:45:35.184  INFO 15620 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 17:45:35.322  INFO 15620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 17:45:35.323  INFO 15620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 17:45:36.941  INFO 15620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 17:45:37.173  INFO 15620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 4 JPA repository interfaces.
+2022-03-11 17:45:37.813  INFO 15620 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$2f5e672c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 17:45:37.896  INFO 15620 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 17:45:38.580  INFO 15620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 17:45:38.607  INFO 15620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 17:45:38.607  INFO 15620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 17:45:38.807  INFO 15620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 17:45:38.808  INFO 15620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3484 ms
+2022-03-11 17:45:39.709  INFO 15620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 17:45:40.357  INFO 15620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 17:45:41.842  INFO 15620 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:45:42.867  WARN 15620 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 17:45:44.233  INFO 15620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 17:45:44.305  INFO 15620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 17:45:44.342  INFO 15620 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 10.285 seconds (JVM running for 11.347)
+2022-03-11 17:45:44.353  INFO 15620 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 17:45:49.727  INFO 15620 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 17:45:49.772  WARN 15620 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 17:51:59.840  INFO 15620 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:51:59.844  INFO 15620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 17:51:59.852  INFO 15620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 17:52:06.091  INFO 20028 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 20028 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 17:52:06.097  INFO 20028 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 17:52:06.181  INFO 20028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 17:52:06.182  INFO 20028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 17:52:07.878  INFO 20028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 17:52:08.131  INFO 20028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 236 ms. Found 4 JPA repository interfaces.
+2022-03-11 17:52:08.705  INFO 20028 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4d716cdd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 17:52:08.779  INFO 20028 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 17:52:09.433  INFO 20028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 17:52:09.454  INFO 20028 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 17:52:09.455  INFO 20028 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 17:52:09.620  INFO 20028 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 17:52:09.621  INFO 20028 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3438 ms
+2022-03-11 17:52:10.592  INFO 20028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 17:52:11.052  INFO 20028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 17:52:12.300  INFO 20028 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 17:52:13.682  WARN 20028 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 17:52:14.905  INFO 20028 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 17:52:14.974  INFO 20028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 17:52:15.022  INFO 20028 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 9.626 seconds (JVM running for 10.395)
+2022-03-11 17:52:15.033  INFO 20028 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 17:53:33.740  INFO 20028 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 18:15:39.840  WARN 20028 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 18:18:23.454  WARN 20028 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 18:19:03.620  INFO 20028 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:19:03.620  INFO 20028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 18:19:03.634  INFO 20028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 18:19:09.994  INFO 20188 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 20188 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 18:19:09.998  INFO 20188 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 18:19:10.070  INFO 20188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 18:19:10.070  INFO 20188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 18:19:11.222  INFO 20188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 18:19:11.440  INFO 20188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 199 ms. Found 4 JPA repository interfaces.
+2022-03-11 18:19:12.026  INFO 20188 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$de175bff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 18:19:12.100  INFO 20188 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 18:19:12.992  INFO 20188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 18:19:13.031  INFO 20188 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 18:19:13.032  INFO 20188 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 18:19:13.240  INFO 20188 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 18:19:13.241  INFO 20188 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3171 ms
+2022-03-11 18:19:14.546  INFO 20188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 18:19:15.334  INFO 20188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 18:19:16.850  INFO 20188 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:19:17.852  WARN 20188 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 18:19:18.903  INFO 20188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 18:19:18.945  INFO 20188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 18:19:18.962  INFO 20188 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 9.703 seconds (JVM running for 10.507)
+2022-03-11 18:19:18.970  INFO 20188 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 18:19:25.744  INFO 20188 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 18:19:30.400  WARN 20188 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 18:21:27.541  WARN 20188 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.entity.AllEntity)]
+2022-03-11 18:23:28.100  INFO 20188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:23:28.100  INFO 20188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 18:23:28.110  INFO 20188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 18:23:33.602  INFO 19640 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 19640 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 18:23:33.602  INFO 19640 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 18:23:33.662  INFO 19640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 18:23:33.663  INFO 19640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 18:23:34.580  INFO 19640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 18:23:34.754  INFO 19640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 4 JPA repository interfaces.
+2022-03-11 18:23:35.395  INFO 19640 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$40b8eabc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 18:23:35.460  INFO 19640 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 18:23:36.060  INFO 19640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 18:23:36.076  INFO 19640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 18:23:36.079  INFO 19640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 18:23:36.192  INFO 19640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 18:23:36.200  INFO 19640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2536 ms
+2022-03-11 18:23:37.000  INFO 19640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 18:23:37.460  INFO 19640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 18:23:38.620  INFO 19640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:23:39.624  WARN 19640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 18:23:40.301  INFO 19640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 18:23:40.356  INFO 19640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 18:23:40.370  INFO 19640 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 7.182 seconds (JVM running for 7.598)
+2022-03-11 18:23:40.375  INFO 19640 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 18:23:50.066  INFO 19640 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 18:24:03.032  WARN 19640 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByOrderByBookIdDesc(com.bridgelabz.bookstoreapp.dto.BookDTO)]
+2022-03-11 18:25:05.570  INFO 19640 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:25:05.574  INFO 19640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 18:25:05.582  INFO 19640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 18:25:11.095  INFO 1440 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 1440 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 18:25:11.095  INFO 1440 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 18:25:11.145  INFO 1440 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 18:25:11.145  INFO 1440 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 18:25:11.920  INFO 1440 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 18:25:12.055  INFO 1440 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 4 JPA repository interfaces.
+2022-03-11 18:25:12.375  INFO 1440 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5b301775] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 18:25:12.411  INFO 1440 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 18:25:12.761  INFO 1440 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 18:25:12.769  INFO 1440 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 18:25:12.769  INFO 1440 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 18:25:12.854  INFO 1440 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 18:25:12.856  INFO 1440 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1707 ms
+2022-03-11 18:25:13.355  INFO 1440 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 18:25:13.719  INFO 1440 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 18:25:14.558  INFO 1440 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:25:15.470  WARN 1440 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 18:25:16.214  INFO 1440 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 18:25:16.274  INFO 1440 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 18:25:16.294  INFO 1440 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 5.554 seconds (JVM running for 5.991)
+2022-03-11 18:25:16.303  INFO 1440 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 18:25:29.684  INFO 1440 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-11 18:25:29.714  WARN 1440 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.bridgelabz.bookstoreapp.dto.ResponseDTO> com.bridgelabz.bookstoreapp.controller.BookController.getBooksByAuthor(com.bridgelabz.bookstoreapp.dto.BookDTO)]
+2022-03-11 18:28:52.540  INFO 1440 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:28:52.549  INFO 1440 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-11 18:28:52.563  INFO 1440 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-11 18:28:58.387  INFO 16664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 16664 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
+2022-03-11 18:28:58.394  INFO 16664 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-03-11 18:28:58.508  INFO 16664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-11 18:28:58.509  INFO 16664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-11 18:28:59.951  INFO 16664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-11 18:29:00.189  INFO 16664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 219 ms. Found 4 JPA repository interfaces.
+2022-03-11 18:29:00.730  INFO 16664 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a5d53e40] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-11 18:29:00.797  INFO 16664 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-03-11 18:29:01.516  INFO 16664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-11 18:29:01.531  INFO 16664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-11 18:29:01.531  INFO 16664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-11 18:29:01.705  INFO 16664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-11 18:29:01.706  INFO 16664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3196 ms
+2022-03-11 18:29:02.999  INFO 16664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-11 18:29:03.497  INFO 16664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-11 18:29:04.880  INFO 16664 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 18:29:05.822  WARN 16664 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-11 18:29:06.679  INFO 16664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-11 18:29:06.736  INFO 16664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-11 18:29:06.752  INFO 16664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 8.955 seconds (JVM running for 9.517)
+2022-03-11 18:29:06.760  INFO 16664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-03-11 18:29:27.695  INFO 16664 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'

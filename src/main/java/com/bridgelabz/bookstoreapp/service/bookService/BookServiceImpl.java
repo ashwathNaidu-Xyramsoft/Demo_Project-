@@ -93,5 +93,18 @@ public class BookServiceImpl implements IBookService{
         return bookRepository.getBooksByOrderByPriceDesc();
     }
 
+    @Override
+    public List<Book> getBooksByOrderByBookIdAsc() {
+        return bookRepository.getBooksByOrderByBookIdAsc();
+    }
 
+    @Override
+    public List<Book> getBooksByOrderByBookIdDesc() {
+        return bookRepository.getBooksByOrderByBookIdDesc();
+    }
+
+    @Override
+    public List<Book> getBooksByAuthor(String author) {
+        return bookRepository.getBooksByAuthor(author);
+    }
 }
