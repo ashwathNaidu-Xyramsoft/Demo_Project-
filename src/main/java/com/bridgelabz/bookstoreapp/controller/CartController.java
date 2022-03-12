@@ -70,9 +70,9 @@ public class CartController {
 
 
     // need to work
-    @PutMapping("/update/addBooksToCartByCartID/{cartId}")
-    public ResponseEntity<ResponseDTO> addBooksToCartByCartID(@PathVariable("cartId") Long cartId,@RequestParam Long bookId) {
-        Cart cartData = cartService.addBooksToCartByCartID(cartId, bookId);
+    @PutMapping("/update/addBooksToCartByCartID")
+    public ResponseEntity<ResponseDTO> addBooksToCartByCartID(@RequestBody CartDTO cartDTO) {
+        Cart cartData = cartService.addBooksToCartByCartID(cartDTO.getCartId(), cartDTO.getBookId());
         ResponseDTO respDTO = new ResponseDTO("Book updated successfully in cart : ", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
@@ -86,10 +86,11 @@ public class CartController {
     }
 
     // Get cart List for user
-    @GetMapping(value = {"/get-All-Cart-Items-User"})
-    public ResponseEntity<ResponseDTO> getAllCartItemsUser(@RequestParam String token) {
+    @GetMapping(value = {"/get-All-Cart-Items-User/{token}"})
+    public ResponseEntity<ResponseDTO> getAllCartItemsUser(@PathVariable("token")String token) {
         List<Cart> allCartItems = cartService.getAllCartItemsUser(token);
-        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
+        List<Book> bookList = doArrayList(allCartItems);
+        ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", bookList);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
@@ -107,6 +108,14 @@ public class CartController {
     public ResponseEntity<ResponseDTO> getBookStoreDataByUserId(@RequestParam Long userId) {
         List<Cart> allCartItems = cartService.getBookStoreDataByUserId(userId);
         ResponseDTO respDTO = new ResponseDTO("Get Call Successfully", allCartItems);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    // get User By token
+    @GetMapping(value = {"/getCartIdByToken/{token}"})
+    public ResponseEntity<ResponseDTO> getCartIdByToken(@PathVariable String token) {
+        Long cartId = cartService.getUserByEmail(token);
+        ResponseDTO respDTO = new ResponseDTO("Get cartId Call Successfully", cartId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 

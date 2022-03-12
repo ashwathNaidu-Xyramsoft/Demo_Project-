@@ -104,8 +104,8 @@ public class CartServiceImpl implements ICartService{
         String emailID = UserLoginServiceImpl.verifyToken(token);
         User userByEmail = userRepository.getEmailIdByEmail(emailID);
         System.out.println("Its crossing this line");
+        System.out.println(userByEmail.getId());
         List<Cart> cart = cartrepository.findAllByUsersId(userByEmail.getId());
-        System.out.println(cart);
         return cart;
     }
 
@@ -118,5 +118,13 @@ public class CartServiceImpl implements ICartService{
     @Override
     public List<Cart> getBookStoreDataByUsers_Id(Long users_id) {
         return cartrepository.getBookStoreDataByUsers_Id(users_id);
+    }
+
+    @Override
+    public Long getUserByEmail(String token) {
+        String email = UserLoginServiceImpl.verifyToken(token);
+        User user = userRepository.getUserByEmail(email);
+        Long cartId = user.getCart().get(0).getCartId();
+        return cartId;
     }
 }

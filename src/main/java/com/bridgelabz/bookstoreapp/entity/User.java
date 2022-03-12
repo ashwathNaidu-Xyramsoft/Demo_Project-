@@ -19,7 +19,7 @@ public class User {
     private String firstName;
     @Column(name="LastName",nullable=false)
     private String lastName;
-    @Column(name="DateOfBirt",nullable=false)
+    @Column(name="DateOfBirt")
     private String dateOfBirt;
     @Column(name="Email",nullable=false,unique=true)
     private String email;

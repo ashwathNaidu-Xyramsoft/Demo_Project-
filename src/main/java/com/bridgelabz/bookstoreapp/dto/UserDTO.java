@@ -17,7 +17,7 @@ public class UserDTO {
     @Pattern(regexp = "[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Person last name Invalid")
     private String lastName;
 
-    @NotEmpty(message = "Enter valid DOB")
+    // @NotEmpty(message = "Enter valid DOB")
     private String dateOfBirt;
 
     @Email(message = "Enter valid email ID")

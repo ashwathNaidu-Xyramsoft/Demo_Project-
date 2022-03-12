@@ -2,6 +2,7 @@ package com.bridgelabz.bookstoreapp.service.cartService;
 
 import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Cart;
+import com.bridgelabz.bookstoreapp.entity.User;
 
 import java.util.List;
 
@@ -21,6 +22,8 @@ public interface ICartService {
     List<Cart> findCartsByUsers_Id(Long userId);
 
     List<Cart> getBookStoreDataByUsers_Id(Long users_id);
+
+    Long getUserByEmail(String token);
 
 
 
