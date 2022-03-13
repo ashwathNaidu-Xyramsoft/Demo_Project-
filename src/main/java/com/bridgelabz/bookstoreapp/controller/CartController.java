@@ -8,6 +8,7 @@ import com.bridgelabz.bookstoreapp.service.cartService.CartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -84,6 +85,17 @@ public class CartController {
         ResponseDTO respDTO = new ResponseDTO("deleted sucessful ", "Deleted Id" + cartId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    // delete
+    @Transactional
+    @DeleteMapping("/deleteBookByBook_Id/{books_book_id}")
+    public ResponseEntity<ResponseDTO> deleteBookFromCartByBook_Id(@PathVariable("books_book_id") Long books_book_id) {
+        System.out.println(books_book_id);
+        String deletedBook = cartService.deleteBookByBook_Id(books_book_id);
+        ResponseDTO respDTO = new ResponseDTO("deleted successful ", deletedBook);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
 
     // Get cart List for user
     @GetMapping(value = {"/get-All-Cart-Items-User/{token}"})

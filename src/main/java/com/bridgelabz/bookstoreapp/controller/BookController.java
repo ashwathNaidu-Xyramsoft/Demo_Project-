@@ -106,7 +106,7 @@ public class BookController {
         return new ResponseEntity<ResponseDTO>(booksResponseDTO, HttpStatus.OK);
     }
 
-    // BOOKS searchBooksByName SORTING
+    // BOOKS searchBooksBy Author
     @PostMapping(value = {"/getBooksByAuthor"})
     public ResponseEntity<ResponseDTO> getBooksByAuthor(@RequestBody BookDTO  bookDTO){
         List<Book> booksByAuthor = bookService.getBooksByAuthor(bookDTO.getAuthor());

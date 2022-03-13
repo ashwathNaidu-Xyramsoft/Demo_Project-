@@ -66,6 +66,7 @@ public class CartServiceImpl implements ICartService{
         System.out.println(book.getQuantity()); // getQuantity
 
         if (quantity != 0 && book.getQuantity() >= quantity){
+
             Cart cart = new Cart();
             cart.setUsers(userById);
             cart.setQuantity(quantity);
@@ -95,7 +96,6 @@ public class CartServiceImpl implements ICartService{
     public Cart updateCart(Long cartId, Long quantity) {
         Cart cartData = cartrepository.getBookStoreDataByCartId(cartId);
         cartData.setQuantity(quantity);
-        // modelMapper.map(cartData,cartData);
         return cartrepository.save(cartData);
     }
 
@@ -103,8 +103,6 @@ public class CartServiceImpl implements ICartService{
     public List<Cart> getAllCartItemsUser(String token) {
         String emailID = UserLoginServiceImpl.verifyToken(token);
         User userByEmail = userRepository.getEmailIdByEmail(emailID);
-        System.out.println("Its crossing this line");
-        System.out.println(userByEmail.getId());
         List<Cart> cart = cartrepository.findAllByUsersId(userByEmail.getId());
         return cart;
     }
@@ -124,7 +122,14 @@ public class CartServiceImpl implements ICartService{
     public Long getUserByEmail(String token) {
         String email = UserLoginServiceImpl.verifyToken(token);
         User user = userRepository.getUserByEmail(email);
+
         Long cartId = user.getCart().get(0).getCartId();
         return cartId;
+    }
+
+    @Override
+    public String deleteBookByBook_Id(Long books_book_id) {
+        cartrepository.deleteBookByBook_Id(books_book_id);
+        return "Deleted book with ID " + books_book_id;
     }
 }

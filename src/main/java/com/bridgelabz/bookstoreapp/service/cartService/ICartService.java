@@ -25,6 +25,11 @@ public interface ICartService {
 
     Long getUserByEmail(String token);
 
+    String deleteBookByBook_Id(Long books_book_id);
+
+
+
+
 
 
 }
