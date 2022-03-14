@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -64,8 +65,12 @@ public class CartServiceImpl implements ICartService{
         // getting user by user ID
         User userById = userRepository.getUserById(userId);
         System.out.println(book.getQuantity()); // getQuantity
-
-        if (quantity != 0 && book.getQuantity() >= quantity){
+        Cart cart = new Cart();
+        cart.setUsers(userById);
+        cart.setQuantity(quantity);
+        cart.addBookToCart(book);
+        return cartrepository.save(cart);
+        /* if (quantity != 0 && book.getQuantity() >= quantity){
 
             Cart cart = new Cart();
             cart.setUsers(userById);
@@ -74,16 +79,23 @@ public class CartServiceImpl implements ICartService{
             return cartrepository.save(cart);
         }
         throw new BookStoreException("Book is out stock !!! -> ( Enter the valid quantity )");
-        /*cart.setBooks(book);*/
-
+        *//*cart.setBooks(book);*//*
+*/
     }
 
     @Override // need to work on BOOK // now it is effecting in DB but need to work
-    public Cart addBooksToCartByCartID(Long cartId, Long bookId) {
-        Cart cart = cartrepository.findById(cartId).get();
-        Book bookByBookId = bookRepository.findByBookId(bookId);
-        cart.addBookToCart(bookByBookId);
-        return cartrepository.save(cart);
+    public Cart addBooksToCartByCartID(Long cartId, Long bookId,Long quantity) {
+        Book book = bookRepository.getBookByBookId(bookId);
+
+        if (quantity != 0 && book.getQuantity() >= quantity){
+
+            Cart cart = cartrepository.findById(cartId).get();
+            Book bookByBookId = bookRepository.findByBookId(bookId);
+            cart.setQuantity(quantity);
+            cart.addBookToCart(bookByBookId);
+            return cartrepository.save(cart);
+        }
+        throw new BookStoreException("Book is out stock !!! -> ( Enter the valid quantity )");
     }
 
     @Override // working
@@ -122,14 +134,35 @@ public class CartServiceImpl implements ICartService{
     public Long getUserByEmail(String token) {
         String email = UserLoginServiceImpl.verifyToken(token);
         User user = userRepository.getUserByEmail(email);
-
-        Long cartId = user.getCart().get(0).getCartId();
-        return cartId;
+        Long userId = user.getId();
+        return userId;
     }
 
     @Override
     public String deleteBookByBook_Id(Long books_book_id) {
         cartrepository.deleteBookByBook_Id(books_book_id);
         return "Deleted book with ID " + books_book_id;
+    }
+
+
+
+    @Override
+    public List<Book> getBooksByToken(String token) {
+        String email = UserLoginServiceImpl.findSubByDecodeToken(token);
+        User user = userRepository.getUserByEmail(email);
+        List<Book> bookList = new ArrayList<>();
+        for (int i = 0; i < user.getCart().size(); i++) {
+            List<Book> books = user.getCart().get(i).getBooks();
+            for (int j = 0; j < books.size(); j++) {
+                Book book = books.get(j);
+                bookList.add(book);
+            }
+        }
+        return bookList;
+    }
+
+    @Override
+    public String deleteAllBooksByToken(String token) {
+        return null;
     }
 }

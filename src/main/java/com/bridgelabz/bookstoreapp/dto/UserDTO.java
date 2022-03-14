@@ -29,7 +29,7 @@ public class UserDTO {
     @Pattern(regexp = "(91 )[1-9]{1}[0-9]{9}", message = "Enter valid mobile number")
     private String phoneNumber;
 
-    @NotNull(message="Enter the valid KYC")
+
     private String kyc;
 
     @Pattern(regexp = "Admin|Normal User", message = "Enter valid role")

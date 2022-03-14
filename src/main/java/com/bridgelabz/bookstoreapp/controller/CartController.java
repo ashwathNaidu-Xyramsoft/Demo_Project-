@@ -73,7 +73,7 @@ public class CartController {
     // need to work
     @PutMapping("/update/addBooksToCartByCartID")
     public ResponseEntity<ResponseDTO> addBooksToCartByCartID(@RequestBody CartDTO cartDTO) {
-        Cart cartData = cartService.addBooksToCartByCartID(cartDTO.getCartId(), cartDTO.getBookId());
+        Cart cartData = cartService.addBooksToCartByCartID(cartDTO.getCartId(), cartDTO.getBookId(),cartDTO.getQuantity());
         ResponseDTO respDTO = new ResponseDTO("Book updated successfully in cart : ", cartData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
@@ -130,6 +130,21 @@ public class CartController {
         ResponseDTO respDTO = new ResponseDTO("Get cartId Call Successfully", cartId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    // get Books By Token
+    @GetMapping(value = {"/getBooksByToken/{token}"})
+    public ResponseEntity<ResponseDTO> getBooksByToken(@PathVariable String token) {
+        System.out.println(token);
+        List<Book> booksByToken = cartService.getBooksByToken(token);
+        ResponseDTO respDTO = new ResponseDTO("Get cartId Call Successfully", booksByToken);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+
+
+
+
+
 
     // doing list to array list to get particular Data format from DataBase
     List<Book> doArrayList(List<Cart> arrayList){

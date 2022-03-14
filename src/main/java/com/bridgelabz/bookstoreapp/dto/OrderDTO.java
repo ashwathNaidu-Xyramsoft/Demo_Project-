@@ -4,12 +4,17 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Data
 public class OrderDTO {
 
+    LocalDateTime myDateObj = LocalDateTime.now();
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
+
     @NotNull
-    private String orderDate;
+    private String orderDate = myDateObj.format(myFormatObj);
 
     @NotNull
     private Long price;

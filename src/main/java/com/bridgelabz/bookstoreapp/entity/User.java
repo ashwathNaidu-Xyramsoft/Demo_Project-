@@ -27,7 +27,7 @@ public class User {
     private String password;
     @Column(name="PhoneNumber",nullable=false,unique=true)
     private String phoneNumber;
-    @Column(name="KYC",nullable=false,unique=true)
+    @Column(name="KYC",unique=true)
     private String kyc;
     @Column(name="Role",nullable=false)
     private String role;
