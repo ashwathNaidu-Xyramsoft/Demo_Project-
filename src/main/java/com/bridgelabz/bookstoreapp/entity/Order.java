@@ -1,6 +1,7 @@
 package com.bridgelabz.bookstoreapp.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,21 +32,23 @@ public class Order{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long OrderId;
-    @NotNull
-    private String orderDate;
-    @NotNull
-    private Long price;
-    @NotNull
-    private Long Quantity;
-    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid")
-    private String Address;
 
+    private String orderDate = String.valueOf(LocalDate.now());
+
+    private Long price;
+
+    private Long quantity;
+
+    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid")
+    private String address;
+
+    @JsonIgnore
     @ManyToOne
     private User user;
 
+    @JsonIgnore
     @ManyToMany
-    private List<Book> book;
+    private List<Book> book; // will be stored
 
-    @NotNull
     private boolean cancel;
 }

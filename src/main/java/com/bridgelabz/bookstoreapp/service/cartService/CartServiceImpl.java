@@ -144,10 +144,8 @@ public class CartServiceImpl implements ICartService{
         return "Deleted book with ID " + books_book_id;
     }
 
-
-
     @Override
-    public List<Book> getBooksByToken(String token) {
+    public List<Book> getBooksByToken(String token) { // this given me current selected data of books in databases
         String email = UserLoginServiceImpl.findSubByDecodeToken(token);
         User user = userRepository.getUserByEmail(email);
         List<Book> bookList = new ArrayList<>();

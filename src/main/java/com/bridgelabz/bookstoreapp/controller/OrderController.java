@@ -13,36 +13,36 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("order")
+@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
     OrderServiceImpl orderServiceImpl;
 
-    @GetMapping(value = {"","/","/get-all-order"})
+    @GetMapping(value = {"","/","/get-all-order"}) // done
     public ResponseEntity<ResponseDTO> getAllOrders(){
         List<Order> allOrders = orderServiceImpl.getAllOrders();
         ResponseDTO responseDTO = new ResponseDTO("Get Call Success", allOrders);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
-    @GetMapping( "/get-All-Orders-For-User")
-    public ResponseEntity<ResponseDTO> getAllOrdersForUser(@RequestParam String token){
+    @GetMapping( "/getAllOrdersForUser/{token}") // done
+    public ResponseEntity<ResponseDTO> getAllOrdersForUser(@PathVariable String token){
         List<Order> userOrderList = orderServiceImpl.getAllOrdersForUser(token);
         ResponseDTO responseDTO = new ResponseDTO("Get Call Successful at ORDER DTO: " , userOrderList);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
-    @DeleteMapping("/cancel-Orders-By-Id/{orderId}")
+    @DeleteMapping("/cancelOrdersByTokenAndId/{orderId}")
     public ResponseEntity<ResponseDTO> CancelOrdersById(@PathVariable Long orderId,@RequestParam String token){
         orderServiceImpl.cancelOrder(token, orderId);
         ResponseDTO responseDTO = new ResponseDTO("Canceled Order with id  " + orderId,"");
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
-    @PostMapping("/place-Order")
-    public ResponseEntity<ResponseDTO> addPersonData(@RequestParam String token){
-        Order placeOrder = orderServiceImpl.placeOrder(token);
+    @PostMapping("/placeOrder/{token}") // done
+    public ResponseEntity<ResponseDTO> placeOrderByToken(@PathVariable String token,@RequestBody OrderDTO orderDTO){
+        Order placeOrder = orderServiceImpl.placeOrder(token, orderDTO.getPrice(), orderDTO.getQuantity(), orderDTO.getAddress());
         ResponseDTO responseDTO = new ResponseDTO("Oder Place successfully : " ,placeOrder);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
