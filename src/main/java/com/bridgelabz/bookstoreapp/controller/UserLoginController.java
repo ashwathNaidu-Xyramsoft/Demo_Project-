@@ -42,7 +42,7 @@ public class UserLoginController {
     }
 
     // verify OTP that sent to email
-    @PutMapping("/rest_password")
+    @PutMapping("/forgot-password")
     public ResponseEntity<ResponseDTO> changeExistingPasswordInDatabases(@RequestBody UserLogin userLogin){
         User passwordRestedForUser = userLoginServiceImpl.changeExistingPasswordInDatabases(userLogin);
         ResponseDTO responseDTO = new ResponseDTO(" New password successfully updated in database -> {} : ",passwordRestedForUser);
