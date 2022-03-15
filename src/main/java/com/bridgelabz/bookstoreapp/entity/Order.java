@@ -39,7 +39,7 @@ public class Order{
 
     private Long quantity;
 
-    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid")
+    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "address Invalid")
     private String address;
 
     @JsonIgnore
