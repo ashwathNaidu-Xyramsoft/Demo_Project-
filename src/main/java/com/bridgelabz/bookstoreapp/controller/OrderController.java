@@ -3,6 +3,8 @@ package com.bridgelabz.bookstoreapp.controller;
 import com.bridgelabz.bookstoreapp.dto.OrderDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Order;
+import com.bridgelabz.bookstoreapp.entity.UserLogin;
+import com.bridgelabz.bookstoreapp.service.orderService.IOrderService;
 import com.bridgelabz.bookstoreapp.service.orderService.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,9 @@ public class OrderController {
 
     @Autowired
     OrderServiceImpl orderServiceImpl;
+
+    @Autowired
+    IOrderService iOrderService;
 
     @GetMapping(value = {"","/","/get-all-order"}) // done
     public ResponseEntity<ResponseDTO> getAllOrders(){
@@ -44,6 +49,14 @@ public class OrderController {
     public ResponseEntity<ResponseDTO> placeOrderByToken(@PathVariable String token,@RequestBody OrderDTO orderDTO){
         Order placeOrder = orderServiceImpl.placeOrder(token, orderDTO.getPrice(), orderDTO.getQuantity(), orderDTO.getAddress());
         ResponseDTO responseDTO = new ResponseDTO("Oder Place successfully : " ,placeOrder);
+        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+    }
+
+    // send order summary to email
+    @PostMapping("/sendOrderConformationToEmail/{token}")
+    public ResponseEntity<ResponseDTO> sendOrderConformationToEmail(@PathVariable String token){
+        String orderSummeryToEmail = iOrderService.sendOrderSummeryToEmail(token);
+        ResponseDTO responseDTO = new ResponseDTO("sending Order Conformation To Email has been successfully sent : ",orderSummeryToEmail);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 

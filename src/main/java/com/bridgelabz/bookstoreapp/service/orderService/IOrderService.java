@@ -12,6 +12,7 @@ public interface IOrderService {
 
     Order placeOrder(String token,Long priceLong,Long quantity,String Address);
 
+    String sendOrderSummeryToEmail(String token);
 
     // need to send the mail after order placed
 

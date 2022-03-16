@@ -6,6 +6,7 @@ import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.repository.OrderRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.service.cartService.ICartService;
+import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
 import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class OrderServiceImpl implements IOrderService{
     @Autowired
     ICartService iCartService;
 
+    @Autowired
+    private IUserLoginService iUserLoginService;
+
     @Override // done
     public Order placeOrder(String token,Long price,Long quantity,String address) {
 
@@ -44,6 +48,17 @@ public class OrderServiceImpl implements IOrderService{
         order.setUser(user); // set the user for particular User
         order.setBook(booksByToken); // set all th books
         return orderRepository.save(order); // saving the data in SQL DB
+    }
+
+    @Override
+    public String sendOrderSummeryToEmail(String token) {
+        String emailID = UserLoginServiceImpl.verifyToken(token);
+        String subject="Order Summary";
+        String message = "Order successfully conformed";
+        String toEmail = emailID;
+        String fromEmail= "ashwath.naidu@bridgelabz.com";
+        UserLoginServiceImpl.sendEmail(subject, message,fromEmail,toEmail);
+        return "Order successfully conformed";
     }
 
     @Override // need to test
@@ -66,4 +81,5 @@ public class OrderServiceImpl implements IOrderService{
         List<Order> ordersByUser_id = orderRepository.findOrdersByUser_Id(userByEmail.getId());
         return ordersByUser_id;
     }
+
 }

@@ -129,7 +129,7 @@ public class UserLoginServiceImpl implements IUserLoginService{
         throw new BookStoreException("Enter the valid email ID");
     }
 
-    private void sendEmail(String subject, String message, String fromEmail, String toEmail) {
+    public static void sendEmail(String subject, String message, String fromEmail, String toEmail) {
         Properties properties = System.getProperties(); // system properties
         System.out.println(properties);
         // set the host properties
