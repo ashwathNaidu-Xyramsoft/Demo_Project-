@@ -53,7 +53,7 @@ public class OrderController {
     }
 
     // send order summary to email
-    @PostMapping("/sendOrderConformationToEmail/{token}")
+    @GetMapping("/sendOrderConformationToEmail/{token}")
     public ResponseEntity<ResponseDTO> sendOrderConformationToEmail(@PathVariable String token){
         String orderSummeryToEmail = iOrderService.sendOrderSummeryToEmail(token);
         ResponseDTO responseDTO = new ResponseDTO("sending Order Conformation To Email has been successfully sent : ",orderSummeryToEmail);
