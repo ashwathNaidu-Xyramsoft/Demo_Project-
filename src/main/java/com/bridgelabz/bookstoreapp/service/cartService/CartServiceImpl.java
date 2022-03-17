@@ -159,8 +159,10 @@ public class CartServiceImpl implements ICartService{
         return bookList;
     }
 
-    @Override
+    @Override // check this function
     public String deleteAllBooksByToken(String token) {
+        String emailId = UserLoginServiceImpl.verifyToken(token);
+        cartrepository.deleteAll(); // think once
         return null;
     }
 }

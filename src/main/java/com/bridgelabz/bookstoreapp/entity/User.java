@@ -39,4 +39,9 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy="user")
     private List<Order> orderList;
+
+    // new added
+    @JsonIgnore
+    @OneToMany(mappedBy="user")
+    private List<WishList> wishLists;
 }

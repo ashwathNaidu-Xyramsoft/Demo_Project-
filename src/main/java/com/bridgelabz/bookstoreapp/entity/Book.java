@@ -58,4 +58,10 @@ public class Book {
     @ManyToMany(mappedBy="book")
     private List<Order> order;
 
+    // new added
+
+    @JsonIgnore
+    @ManyToMany(mappedBy ="books",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+    private List<WishList> wishList;
+
 }
