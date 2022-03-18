@@ -28,7 +28,7 @@ public class WishList {
     private List<Book> books; // will be stored
 
     // add books into list
-    public void addBookToCart(Book bookByBookId) {
+    public void addBookToWishList(Book bookByBookId) {
         if (books == null) {
             books = new ArrayList<>();
         }
