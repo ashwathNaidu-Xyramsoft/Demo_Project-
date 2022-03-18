@@ -10,10 +10,12 @@ import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.repository.WishListRepository;
 import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
+import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,7 +46,25 @@ public class WishListServiceImpl implements IWishListService{
 
     @Override
     public List<Book> getBooksByToken(String token) {
-        return null;
+        String email = UserLoginServiceImpl.findSubByDecodeToken(token);
+        User user = userRepository.getUserByEmail(email);
+        List<Book> bookList = new ArrayList<>();
+        for (int i = 0; i < user.getWishLists().size(); i++) {
+            List<Book> books = user.getWishLists().get(i).getBooks();
+            for (int j = 0; j < books.size(); j++) {
+                Book book = books.get(j);
+                bookList.add(book);
+            }
+        }
+        return bookList;
+
+        /* for (int i = 0; i < user.getCart().size(); i++) {
+            List<Book> books = user.getCart().get(i).getBooks();
+            for (int j = 0; j < books.size(); j++) {
+                Book book = books.get(j);
+                bookList.add(book);
+            }
+        }*/
     }
 
     @Override //done
