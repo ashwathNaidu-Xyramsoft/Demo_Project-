@@ -20,8 +20,8 @@ public class OrderDTO {
     @NotNull
     private Long quantity;
 
-    @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "Address is Invalid")
-    private String address;
+    @NotNull
+    private Long address;
 
     private boolean cancel = false;
 }

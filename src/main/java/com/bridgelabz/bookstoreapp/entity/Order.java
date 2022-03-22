@@ -39,8 +39,13 @@ public class Order{
 
     private Long quantity;
 
+/*
     @Pattern(regexp = "[A-Za-z]{1}[a-zA-Z\\s]{2,}$", message = "address Invalid")
-    private String address;
+*/
+
+    @OneToOne
+    @JoinColumn ( name = "address_address_id" )
+    private Address address;
 
     @JsonIgnore
     @ManyToOne

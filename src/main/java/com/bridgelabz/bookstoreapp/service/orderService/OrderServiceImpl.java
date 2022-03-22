@@ -1,8 +1,10 @@
 package com.bridgelabz.bookstoreapp.service.orderService;
 
+import com.bridgelabz.bookstoreapp.entity.Address;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Order;
 import com.bridgelabz.bookstoreapp.entity.User;
+import com.bridgelabz.bookstoreapp.repository.AddressRepository;
 import com.bridgelabz.bookstoreapp.repository.OrderRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.service.cartService.ICartService;
@@ -30,21 +32,24 @@ public class OrderServiceImpl implements IOrderService{
     ICartService iCartService;
 
     @Autowired
+    AddressRepository addressRepository;
+
+    @Autowired
     private IUserLoginService iUserLoginService;
 
     @Override // done
-    public Order placeOrder(String token,Long price,Long quantity,String address) {
+    public Order placeOrder(String token,Long price,Long quantity,Long address) {
 
         String emailId = UserLoginServiceImpl.verifyToken(token); // verify token and get email ID
         List<Book> booksByToken = iCartService.getBooksByToken(token); // getting books
         User user = userRepository.getUserByEmail(emailId); // get user from the email ID
-
+        Address address1 = addressRepository.getAddressByAddressId(address);
         // need to write condition on QTY of BOOK and TOKEN ******* !!!
 
         Order order = new Order();
         order.setPrice(price); // get the total price after the QTY is final
         order.setQuantity(quantity); // set the final QTY
-        order.setAddress(address); // set the shipping address
+        order.setAddress(address1); // set the shipping address
         order.setUser(user); // set the user for particular User
         order.setBook(booksByToken); // set all th books
         return orderRepository.save(order); // saving the data in SQL DB

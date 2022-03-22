@@ -10,7 +10,7 @@ public interface IOrderService {
     List<Order> getAllOrders();
     List<Order> getAllOrdersForUser(String token);
 
-    Order placeOrder(String token,Long priceLong,Long quantity,String Address);
+    Order placeOrder(String token,Long priceLong,Long quantity,Long Address);
 
     String sendOrderSummeryToEmail(String token);
 
