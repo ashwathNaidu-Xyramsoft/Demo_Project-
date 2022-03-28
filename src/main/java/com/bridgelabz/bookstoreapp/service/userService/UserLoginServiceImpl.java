@@ -149,7 +149,8 @@ public class UserLoginServiceImpl implements IUserLoginService{
             mimeMessage.setFrom(new InternetAddress(fromEmail));// need to change
             mimeMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail)); // to email
             mimeMessage.setSubject(subject); // setting subject
-            mimeMessage.setText(message); // setting message
+            mimeMessage.setContent(message,"text/html"); // setting message
+            // mimeMessage.setContent(message);
             Transport.send(mimeMessage);
             log.info("Email sent successFully");
         } catch (MessagingException e) {

@@ -59,7 +59,7 @@ public class OrderServiceImpl implements IOrderService{
     public String sendOrderSummeryToEmail(String token) {
         String emailID = UserLoginServiceImpl.verifyToken(token);
         String subject="Order Summary";
-        String message = "Order successfully conformed";
+        String message = getOrderSuccessfullyPage();
         String toEmail = emailID;
         String fromEmail= "ashwath.naidu@bridgelabz.com";
         UserLoginServiceImpl.sendEmail(subject, message,fromEmail,toEmail);
@@ -87,4 +87,36 @@ public class OrderServiceImpl implements IOrderService{
         return ordersByUser_id;
     }
 
+    // html page for order successfully
+    public static String getOrderSuccessfullyPage(){
+        return
+    "<body id='div-order-body' style=''>"+
+        "<div id='div-order-logo-content'>" +
+            "<img class='order-logo' src='https://th.bing.com/th/id/R.aeb1197df34e59e6b654fe8300a43871?rik=g%2f%2bCZ%2b5wg8zsJw&riu=http%3a%2f%2fwww.solidrockvideo.com%2fwp-content%2fuploads%2f2017%2f06%2fsuccess-icon-101-300x300.png&ehk=8Udh%2be74JWzOkSjTKEiMiGAAfX%2bUKsCijnp7s9cflrM%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1?auto=compress&cs=tinysrgb&w=50&h=50&dpr=2' style=' margin-top: 3%; margin-left: 40%;'>" +
+            "<div id='order-name-message' style='position: absolute;  margin-top: -7%; margin-left: 35%; z-index: 1000;'>" +
+                "<span class='order-message' style='font-size: 25px; font-style: Lato, Bold;'>Order Placed Successfully</span>" +
+            "</div>"+
+            "<div class='div-span-conformation'  style='margin-left: -6%;'>" +
+                "<span id='span-conformation' style='margin-top: -0.5%; margin-top: 3%; margin-left: 40%; max-width: 20.5%; display: flex; text-align: center;'>hurray!!! your order is confirmed the order id is save the order id for further communication.</span>" +
+            "</div>"+
+                // table
+            "<div id='table-container' style='margin-top: 20px;text-align: center;margin-left: 17%;'>" +
+                "<table>" +
+                    "<tr id='table-header' style='height: 42px; background-color: #DCDCDC; border: #333232;'>" +
+                        "<th>Email ID</th>"+
+                        "<th>Contact</th>"+
+                        "<th>Address</th>"+
+                    "</tr>"+
+                    "<tr id='tables-body' style='border: #333232; height: 42px; background-color: #f7f1f1; color: #333232; padding: 10px;'>" +
+                        "<td id='email-table' style=' text-decoration: none; min-width: 200px; height: 50px;'>ashwath.bly@gmail.com</td>" +
+                        "<td id='contact-table' style='min-width: 200px; height: 50px;'>91 9008622627</td>" +
+                        "<td id='address-table' style='max-width: 400px;' >Flat no -402,park view appartment, green graden layout," +
+                        "Near sai baba temple road,munnekolala kundalahalli gate." +
+                        "</td>"+
+                    "</tr>" +
+                "</table>" +
+            "</div> " +
+        "</div>"+
+    "</body>";
+    }
 }
