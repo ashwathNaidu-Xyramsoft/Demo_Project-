@@ -10,6 +10,7 @@ import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.service.cartService.ICartService;
 import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
 import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Slf4j
 public class OrderServiceImpl implements IOrderService{
 
     @Autowired

@@ -1,5 +1,6 @@
 package com.bridgelabz.bookstoreapp.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.Pattern;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class BookDTO {
 
     @Pattern(regexp = "[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid")

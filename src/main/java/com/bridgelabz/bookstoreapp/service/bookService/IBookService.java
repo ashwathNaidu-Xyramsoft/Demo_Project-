@@ -24,4 +24,5 @@ public interface IBookService {
     List<Book> getBooksByOrderByBookIdAsc();
     List<Book> getBooksByOrderByBookIdDesc();
     List<Book> getBooksByAuthor(@Pattern(regexp = "[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Person first name Invalid") String author);
+    List<Book> getBooksByAuthorOrName(String author, String name);
 }

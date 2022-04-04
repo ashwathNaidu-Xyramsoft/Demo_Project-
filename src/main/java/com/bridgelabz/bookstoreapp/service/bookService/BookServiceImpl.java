@@ -107,4 +107,9 @@ public class BookServiceImpl implements IBookService{
     public List<Book> getBooksByAuthor(String author) {
         return bookRepository.getBooksByAuthor(author);
     }
+
+    @Override// not used
+    public List<Book> getBooksByAuthorOrName(String author, String name) {
+        return bookRepository.getBooksByAuthorOrName(author,name);
+    }
 }
