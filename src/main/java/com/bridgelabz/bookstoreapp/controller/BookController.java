@@ -1,10 +1,9 @@
 package com.bridgelabz.bookstoreapp.controller;
 
+import com.bridgelabz.bookstoreapp.service.bookService.IBookService;
 import com.bridgelabz.bookstoreapp.dto.BookDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
-import com.bridgelabz.bookstoreapp.entity.AllEntity;
 import com.bridgelabz.bookstoreapp.entity.Book;
-import com.bridgelabz.bookstoreapp.service.bookService.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

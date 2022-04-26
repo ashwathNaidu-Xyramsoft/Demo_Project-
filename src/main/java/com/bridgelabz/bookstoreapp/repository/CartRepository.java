@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.print.Book;
 import java.util.List;
 public interface CartRepository extends JpaRepository<Cart, Long> {
     List<Cart> findAllByUsersId(Long userId);
@@ -29,6 +28,9 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
     @Query(value = " delete from cart_books where books_book_id= :books_book_id",nativeQuery = true)
     void deleteBookByBook_Id(Long books_book_id);
 
+    @Modifying
+    @Transactional
+    void deleteAllByUsers_Id(Long users_id);
     
 
 

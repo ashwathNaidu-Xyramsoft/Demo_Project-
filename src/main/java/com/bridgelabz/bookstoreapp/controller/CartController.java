@@ -1,10 +1,10 @@
 package com.bridgelabz.bookstoreapp.controller;
 
-import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
 import com.bridgelabz.bookstoreapp.service.cartService.CartServiceImpl;
+import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -83,6 +83,15 @@ public class CartController {
     public ResponseEntity<ResponseDTO> deleteBookStoreData(@PathVariable("cartId") Long cartId) {
         cartService.removeCart(cartId);
         ResponseDTO respDTO = new ResponseDTO("deleted sucessful ", "Deleted Id" + cartId);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    // deleteAllBooksByToken
+    @Transactional
+    @DeleteMapping("/deleteCarts/{token}")
+    public ResponseEntity<ResponseDTO> deleteAllBooksByToken(@PathVariable String token) {
+        String deleteMessage = cartService.deleteAllBooksByToken(token);
+        ResponseDTO respDTO = new ResponseDTO("deleted all carts successful ", "Deleted all carts " + deleteMessage);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 

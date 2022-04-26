@@ -1,5 +1,7 @@
 package com.bridgelabz.bookstoreapp.service.wishList;
 
+import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
+import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
 import com.bridgelabz.bookstoreapp.dto.WishListDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
@@ -9,8 +11,6 @@ import com.bridgelabz.bookstoreapp.repository.BookRepository;
 import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.repository.WishListRepository;
-import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
-import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

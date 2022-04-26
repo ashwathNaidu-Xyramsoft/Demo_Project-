@@ -1,10 +1,9 @@
 package com.bridgelabz.bookstoreapp.controller;
 
+import com.bridgelabz.bookstoreapp.service.orderService.IOrderService;
 import com.bridgelabz.bookstoreapp.dto.OrderDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Order;
-import com.bridgelabz.bookstoreapp.entity.UserLogin;
-import com.bridgelabz.bookstoreapp.service.orderService.IOrderService;
 import com.bridgelabz.bookstoreapp.service.orderService.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,167 +1,70 @@
-2022-04-04 00:33:31.956  WARN 22828 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m25s370ms506µs501ns).
-2022-04-04 00:43:19.678  INFO 22828 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 00:43:19.707  INFO 22828 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-04 00:43:19.719  INFO 22828 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-04 15:05:04.783  INFO 18712 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 18712 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
-2022-04-04 15:05:04.790  INFO 18712 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
-2022-04-04 15:05:04.999  INFO 18712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-04-04 15:05:05.000  INFO 18712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-04-04 15:05:07.150  INFO 18712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-04 15:05:07.415  INFO 18712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 6 JPA repository interfaces.
-2022-04-04 15:05:08.548  INFO 18712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4dda1209] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-04 15:05:08.709  INFO 18712 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2022-04-04 15:05:09.393  INFO 18712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-04 15:05:09.415  INFO 18712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-04 15:05:09.416  INFO 18712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-04-04 15:05:09.587  INFO 18712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-04 15:05:09.589  INFO 18712 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4586 ms
-2022-04-04 15:05:10.556  INFO 18712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-04 15:05:11.377  INFO 18712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-04 15:05:13.553  INFO 18712 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 15:05:15.382  WARN 18712 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-04-04 15:05:15.858  WARN 18712 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-04-04 15:05:16.489  INFO 18712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-04-04 15:05:16.711  INFO 18712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-04 15:05:16.740  INFO 18712 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 13.112 seconds (JVM running for 16.615)
-2022-04-04 15:05:16.748  INFO 18712 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
-2022-04-04 15:06:05.202  INFO 18712 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-04 15:06:05.316  INFO 18712 --- [http-nio-8080-exec-6] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:05.317  INFO 18712 --- [http-nio-8080-exec-6] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:05.317  INFO 18712 --- [http-nio-8080-exec-6] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:05.554  INFO 18712 --- [http-nio-8080-exec-6] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:05.555  INFO 18712 --- [http-nio-8080-exec-6] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:05.584  WARN 18712 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:19.391  INFO 18712 --- [http-nio-8080-exec-3] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:19.392  INFO 18712 --- [http-nio-8080-exec-3] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:19.392  INFO 18712 --- [http-nio-8080-exec-3] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:19.505  INFO 18712 --- [http-nio-8080-exec-3] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:19.506  INFO 18712 --- [http-nio-8080-exec-3] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:19.507  WARN 18712 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:20.247  INFO 18712 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:20.248  INFO 18712 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:20.248  INFO 18712 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:20.361  INFO 18712 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:20.362  INFO 18712 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:20.364  WARN 18712 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:20.399  INFO 18712 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:20.399  INFO 18712 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:20.399  INFO 18712 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:20.521  INFO 18712 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:20.521  INFO 18712 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:20.523  WARN 18712 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:20.617  INFO 18712 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:20.618  INFO 18712 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:20.618  INFO 18712 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:20.719  INFO 18712 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:20.719  INFO 18712 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:20.720  WARN 18712 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:21.197  INFO 18712 --- [http-nio-8080-exec-7] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:21.197  INFO 18712 --- [http-nio-8080-exec-7] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:21.197  INFO 18712 --- [http-nio-8080-exec-7] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:21.298  INFO 18712 --- [http-nio-8080-exec-7] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:21.298  INFO 18712 --- [http-nio-8080-exec-7] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:21.299  WARN 18712 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:21.343  INFO 18712 --- [http-nio-8080-exec-8] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:21.343  INFO 18712 --- [http-nio-8080-exec-8] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:21.343  INFO 18712 --- [http-nio-8080-exec-8] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:21.448  INFO 18712 --- [http-nio-8080-exec-8] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:21.448  INFO 18712 --- [http-nio-8080-exec-8] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:21.450  WARN 18712 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:21.571  INFO 18712 --- [http-nio-8080-exec-9] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:21.572  INFO 18712 --- [http-nio-8080-exec-9] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
-2022-04-04 15:06:21.572  INFO 18712 --- [http-nio-8080-exec-9] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:21.683  INFO 18712 --- [http-nio-8080-exec-9] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
-2022-04-04 15:06:21.684  INFO 18712 --- [http-nio-8080-exec-9] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
-2022-04-04 15:06:21.685  WARN 18712 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
-2022-04-04 15:06:27.859  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 15:06:27.859  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : password : Ashwath_0704
-2022-04-04 15:06:27.859  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 15:06:27.965  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Verified 
-2022-04-04 15:06:27.965  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : principal --> ashwath.bly@gmail.com
-2022-04-04 15:06:27.981  INFO 18712 --- [http-nio-8080-exec-10] c.b.b.s.u.UserLoginServiceImpl           : JWT Token is : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2h3YXRoLmJseUBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYWRkcmVzcy1ib29rL0xvZ2luIiwiaWF0IjoxNjQ5MDY0OTg3fQ.e2XeBHGDDlfTLUFfx1MqqMxCqmyw8OLwNPhpthR16J4
-2022-04-04 15:23:19.286  INFO 18712 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 15:23:19.289  INFO 18712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-04 15:23:19.295  INFO 18712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-04 15:23:24.742  INFO 10880 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 10880 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
-2022-04-04 15:23:24.742  INFO 10880 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
-2022-04-04 15:23:24.777  INFO 10880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-04-04 15:23:24.777  INFO 10880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-04-04 15:23:25.293  INFO 10880 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-04 15:23:25.359  INFO 10880 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 6 JPA repository interfaces.
-2022-04-04 15:23:25.600  INFO 10880 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9cb6880a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-04 15:23:25.631  INFO 10880 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2022-04-04 15:23:25.797  INFO 10880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-04 15:23:25.802  INFO 10880 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-04 15:23:25.802  INFO 10880 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-04-04 15:23:25.851  INFO 10880 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-04 15:23:25.851  INFO 10880 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1074 ms
-2022-04-04 15:23:26.108  INFO 10880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-04 15:23:26.303  INFO 10880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-04 15:23:26.893  INFO 10880 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 15:23:27.323  WARN 10880 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-04-04 15:23:27.478  WARN 10880 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-04-04 15:23:27.667  INFO 10880 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-04-04 15:23:27.723  INFO 10880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-04 15:23:27.733  INFO 10880 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 3.22 seconds (JVM running for 3.707)
-2022-04-04 15:23:27.735  INFO 10880 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
-2022-04-04 15:39:30.095  INFO 10880 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 15:39:30.095  INFO 10880 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-04 15:39:30.106  INFO 10880 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-04 22:01:18.147  INFO 16204 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 16204 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
-2022-04-04 22:01:18.149  INFO 16204 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
-2022-04-04 22:01:18.181  INFO 16204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-04-04 22:01:18.182  INFO 16204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-04-04 22:01:19.000  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-04 22:01:19.071  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 6 JPA repository interfaces.
-2022-04-04 22:01:19.362  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$15454ae0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-04 22:01:19.418  INFO 16204 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2022-04-04 22:01:19.650  INFO 16204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-04 22:01:19.663  INFO 16204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-04 22:01:19.663  INFO 16204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-04-04 22:01:19.728  INFO 16204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-04 22:01:19.731  INFO 16204 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1549 ms
-2022-04-04 22:01:20.088  INFO 16204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-04 22:01:20.398  INFO 16204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-04 22:01:21.078  INFO 16204 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 22:01:21.528  WARN 16204 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-04-04 22:01:21.688  WARN 16204 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-04-04 22:01:21.888  INFO 16204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-04-04 22:01:21.957  INFO 16204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-04 22:01:21.971  INFO 16204 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.132 seconds (JVM running for 5.039)
-2022-04-04 22:01:21.971  INFO 16204 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
-2022-04-04 22:01:43.984  INFO 16204 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-04 22:01:44.096  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 22:01:44.096  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : password : Ashwath_0704
-2022-04-04 22:01:44.096  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 22:01:44.369  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Verified 
-2022-04-04 22:01:44.369  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : principal --> ashwath.bly@gmail.com
-2022-04-04 22:01:44.385  INFO 16204 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : JWT Token is : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2h3YXRoLmJseUBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYWRkcmVzcy1ib29rL0xvZ2luIiwiaWF0IjoxNjQ5MDg5OTA0fQ.O1kVpooD24K2x4lLpVPQN1HHFH5X1LcLp93xyevdaOA
-2022-04-04 22:16:07.933  INFO 10160 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 17.0.2 on DESKTOP-IOFPNDM with PID 10160 (C:\Users\ashwa\IdeaProjects\BookStoreApp\target\classes started by ashwa in C:\Users\ashwa\IdeaProjects\BookStoreApp)
-2022-04-04 22:16:07.937  INFO 10160 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
-2022-04-04 22:16:07.983  INFO 10160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-04-04 22:16:07.983  INFO 10160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-04-04 22:16:09.067  INFO 10160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-04 22:16:09.164  INFO 10160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 6 JPA repository interfaces.
-2022-04-04 22:16:09.496  INFO 10160 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$390781c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-04 22:16:09.561  INFO 10160 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2022-04-04 22:16:09.851  INFO 10160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-04 22:16:09.851  INFO 10160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-04 22:16:09.851  INFO 10160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-04-04 22:16:09.933  INFO 10160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-04 22:16:09.936  INFO 10160 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1953 ms
-2022-04-04 22:16:10.413  INFO 10160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-04 22:16:10.842  INFO 10160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-04 22:16:11.921  INFO 10160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-04 22:16:12.600  WARN 10160 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-04-04 22:16:12.847  WARN 10160 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-04-04 22:16:13.164  INFO 10160 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-04-04 22:16:13.268  INFO 10160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-04 22:16:13.281  INFO 10160 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 5.774 seconds (JVM running for 12.218)
-2022-04-04 22:16:13.284  INFO 10160 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
-2022-04-04 22:17:14.124  INFO 10160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-04 22:17:14.349  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
-2022-04-04 22:17:14.352  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : password : Ashwath_0704
-2022-04-04 22:17:14.353  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
-2022-04-04 22:17:14.906  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Verified 
-2022-04-04 22:17:14.906  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : principal --> ashwath.bly@gmail.com
-2022-04-04 22:17:14.933  INFO 10160 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : JWT Token is : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2h3YXRoLmJseUBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYWRkcmVzcy1ib29rL0xvZ2luIiwiaWF0IjoxNjQ5MDkwODM0fQ.9R20RhMBN4OeJ-aGMq3yaz0-B4phqzMFIPBKK6WM3Ek
+2022-04-26 10:07:51.680  INFO 4664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 18.0.1 on 1VGLWC3-XY116 with PID 4664 (C:\Users\admin\Ashwath_Naidu\Demo_Project\Projects\Spring Boot\BookStoreApp\target\classes started by admin in C:\Users\admin\Ashwath_Naidu\Demo_Project\Projects\Spring Boot\BookStoreApp)
+2022-04-26 10:07:51.688  INFO 4664 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-04-26 10:07:51.738  INFO 4664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-26 10:07:51.738  INFO 4664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-26 10:07:52.566  INFO 4664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-26 10:07:52.698  INFO 4664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2022-04-26 10:07:52.971  INFO 4664 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$eebb0038] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-26 10:07:53.011  INFO 4664 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-04-26 10:07:53.316  INFO 4664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-26 10:07:53.333  INFO 4664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-26 10:07:53.333  INFO 4664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-26 10:07:53.401  INFO 4664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-26 10:07:53.401  INFO 4664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1663 ms
+2022-04-26 10:07:53.781  INFO 4664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-26 10:07:54.326  INFO 4664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-26 10:08:41.317  INFO 4664 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-26 10:08:41.903  WARN 4664 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-26 10:08:42.113  WARN 4664 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-04-26 10:08:42.377  INFO 4664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-26 10:08:42.411  INFO 4664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-26 10:08:42.420  INFO 4664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 51.106 seconds (JVM running for 51.76)
+2022-04-26 10:08:42.424  INFO 4664 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-04-26 10:10:12.624  INFO 4664 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-26 10:10:12.916  INFO 4664 --- [http-nio-8080-exec-2] c.b.b.s.userService.UserServiceImpl      : User data : 
+2022-04-26 10:10:27.924  INFO 4664 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
+2022-04-26 10:10:27.925  INFO 4664 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : password : Cahnti_0704
+2022-04-26 10:10:27.925  INFO 4664 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+2022-04-26 10:10:28.365  INFO 4664 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Not Verified 
+2022-04-26 10:10:28.366  INFO 4664 --- [http-nio-8080-exec-4] c.b.b.s.u.UserLoginServiceImpl           : Password is mismatch, Enter the valid password
+2022-04-26 10:10:28.369  WARN 4664 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bridgelabz.bookstoreapp.exception.BookStoreException: Password is mismatch, Enter the valid password]
+2022-04-26 10:10:33.324  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
+2022-04-26 10:10:33.324  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
+2022-04-26 10:10:33.325  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+2022-04-26 10:10:33.461  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Verified 
+2022-04-26 10:10:33.461  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : principal --> ashwath.bly@gmail.com
+2022-04-26 10:10:33.471  INFO 4664 --- [http-nio-8080-exec-5] c.b.b.s.u.UserLoginServiceImpl           : JWT Token is : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2h3YXRoLmJseUBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYWRkcmVzcy1ib29rL0xvZ2luIiwiaWF0IjoxNjUwOTQ4MDMzfQ.8_GNHE0vz2PvSj_naavH3wmBPKYI6sK1O4BZQBKAGYA
+2022-04-26 10:10:58.304  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : email : ashwath.bly@gmail.com
+2022-04-26 10:10:58.305  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : password : Chanti_0704
+2022-04-26 10:10:58.305  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : AuthenticationToken : UsernamePasswordAuthenticationToken [Principal=ashwath.bly@gmail.com, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+2022-04-26 10:10:58.452  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : Authentication status for email ID : ashwath.bly@gmail.com: Verified 
+2022-04-26 10:10:58.452  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : principal --> ashwath.bly@gmail.com
+2022-04-26 10:10:58.452  INFO 4664 --- [http-nio-8080-exec-1] c.b.b.s.u.UserLoginServiceImpl           : JWT Token is : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2h3YXRoLmJseUBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYWRkcmVzcy1ib29rL0xvZ2luIiwiaWF0IjoxNjUwOTQ4MDU4fQ.NS1pca877oo_s4C9-ywAzbymB0FI1X3ubfYOL97KGTc
+2022-04-26 10:12:59.415  INFO 4664 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-26 10:12:59.415  INFO 4664 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-26 10:12:59.432  INFO 4664 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-26 10:16:10.693  INFO 14284 --- [restartedMain] c.b.b.BookStoreAppApplication            : Starting BookStoreAppApplication using Java 18.0.1 on 1VGLWC3-XY116 with PID 14284 (C:\Users\admin\Ashwath_Naidu\Demo_Project\Projects\Spring Boot\BookStoreApp\target\classes started by admin in C:\Users\admin\Ashwath_Naidu\Demo_Project\Projects\Spring Boot\BookStoreApp)
+2022-04-26 10:16:10.695  INFO 14284 --- [restartedMain] c.b.b.BookStoreAppApplication            : The following 1 profile is active: "dev"
+2022-04-26 10:16:10.743  INFO 14284 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-26 10:16:10.744  INFO 14284 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-26 10:16:11.510  INFO 14284 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-26 10:16:11.635  INFO 14284 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 6 JPA repository interfaces.
+2022-04-26 10:16:11.916  INFO 14284 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$bf8c0384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-26 10:16:11.952  INFO 14284 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-04-26 10:16:12.265  INFO 14284 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-26 10:16:12.275  INFO 14284 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-26 10:16:12.276  INFO 14284 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-26 10:16:12.350  INFO 14284 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-26 10:16:12.350  INFO 14284 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1606 ms
+2022-04-26 10:16:12.751  INFO 14284 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-26 10:16:12.990  INFO 14284 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-26 10:16:13.937  INFO 14284 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-26 10:16:14.498  WARN 14284 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-26 10:16:14.703  WARN 14284 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-04-26 10:16:14.976  INFO 14284 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-26 10:16:15.008  INFO 14284 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-26 10:16:15.018  INFO 14284 --- [restartedMain] c.b.b.BookStoreAppApplication            : Started BookStoreAppApplication in 4.711 seconds (JVM running for 5.141)
+2022-04-26 10:16:15.023  INFO 14284 --- [restartedMain] c.b.b.BookStoreAppApplication            : Address Book App Started in DEV Environment
+2022-04-26 10:16:23.983  INFO 14284 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-26 10:16:23.986  INFO 14284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-26 10:16:23.991  INFO 14284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,20 +1,19 @@
 package com.bridgelabz.bookstoreapp.service.cartService;
 
-import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
 import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.exception.BookStoreException;
 import com.bridgelabz.bookstoreapp.repository.BookRepository;
-import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
 import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
+import com.bridgelabz.bookstoreapp.dto.CartDTO;
+import com.bridgelabz.bookstoreapp.repository.CartRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,7 +161,12 @@ public class CartServiceImpl implements ICartService{
     @Override // check this function
     public String deleteAllBooksByToken(String token) {
         String emailId = UserLoginServiceImpl.verifyToken(token);
-        cartrepository.deleteAll(); // think once
-        return null;
+        if (emailId != null) {
+            User user = userRepository.getEmailIdByEmail(emailId);
+            cartrepository.deleteAllByUsers_Id(user.getId());
+            return "All carts are deleted";
+        }
+        log.error("Invalid token, Enter the valid email-Id and Password !!!");
+        throw new BookStoreException("Enter the valid email-Id and Password !!!");
     }
 }

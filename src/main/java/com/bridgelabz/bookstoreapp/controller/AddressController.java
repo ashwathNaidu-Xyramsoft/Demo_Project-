@@ -1,10 +1,10 @@
 package com.bridgelabz.bookstoreapp.controller;
 
 
+import com.bridgelabz.bookstoreapp.service.AddressService.AddressServiceImpl;
 import com.bridgelabz.bookstoreapp.dto.AddressDTO;
 import com.bridgelabz.bookstoreapp.dto.ResponseDTO;
 import com.bridgelabz.bookstoreapp.entity.Address;
-import com.bridgelabz.bookstoreapp.service.AddressService.AddressServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

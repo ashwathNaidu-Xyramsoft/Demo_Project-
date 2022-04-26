@@ -7,11 +7,11 @@ import com.bridgelabz.bookstoreapp.entity.User;
 import com.bridgelabz.bookstoreapp.repository.AddressRepository;
 import com.bridgelabz.bookstoreapp.repository.OrderRepository;
 import com.bridgelabz.bookstoreapp.repository.UserRepository;
-import com.bridgelabz.bookstoreapp.service.cartService.ICartService;
 import com.bridgelabz.bookstoreapp.service.userService.IUserLoginService;
 import com.bridgelabz.bookstoreapp.service.userService.UserLoginServiceImpl;
+import com.bridgelabz.bookstoreapp.repository.CartRepository;
+import com.bridgelabz.bookstoreapp.service.cartService.ICartService;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +28,7 @@ public class OrderServiceImpl implements IOrderService{
     private UserRepository userRepository;
 
     @Autowired
-    private ModelMapper modelMapper;
+    private CartRepository cartRepository;
 
     @Autowired
     ICartService iCartService;
@@ -40,9 +40,10 @@ public class OrderServiceImpl implements IOrderService{
     private IUserLoginService iUserLoginService;
 
     @Override // done
-    public Order placeOrder(String token,Long price,Long quantity,Long address) {
+    public Order placeOrder(String token, Long price, Long quantity, Long address) {
 
         String emailId = UserLoginServiceImpl.verifyToken(token); // verify token and get email ID
+
         List<Book> booksByToken = iCartService.getBooksByToken(token); // getting books
         User user = userRepository.getUserByEmail(emailId); // get user from the email ID
         Address address1 = addressRepository.getAddressByAddressId(address);

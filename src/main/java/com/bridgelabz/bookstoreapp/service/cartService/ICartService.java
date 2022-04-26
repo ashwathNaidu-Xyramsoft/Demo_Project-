@@ -1,9 +1,8 @@
 package com.bridgelabz.bookstoreapp.service.cartService;
 
-import com.bridgelabz.bookstoreapp.dto.CartDTO;
 import com.bridgelabz.bookstoreapp.entity.Book;
 import com.bridgelabz.bookstoreapp.entity.Cart;
-import com.bridgelabz.bookstoreapp.entity.User;
+import com.bridgelabz.bookstoreapp.dto.CartDTO;
 
 import java.util.List;
 
@@ -17,8 +16,6 @@ public interface ICartService {
     void removeCart(Long cartId);
     Cart updateCart(Long catId, Long quantity);
     List<Cart> getAllCartItemsUser(String Token); // option for now
-
-
 
     List<Cart> findCartsByUsers_Id(Long userId);
 
